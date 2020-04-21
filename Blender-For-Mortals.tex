@@ -4,7 +4,12 @@
 \usepackage[czech]{babel}
 \usepackage{graphicx}
 \usepackage{booktabs}
-\usepackage{hyperref}
+\usepackage{makecell}
+
+\usepackage[]{hyperref}
+\hypersetup{pdftex,colorlinks=true,allcolors=black}
+
+
 \graphicspath{{./assets/}}
 
 \usepackage{url}
@@ -99,7 +104,7 @@
 	Takže jak sami vidíte, není toho málo.
 	\begin{figure}
 		\centering
-		\includegraphics[scale=0.25]{next-gen.jpg}
+		\includegraphics[width=8cm]{next-gen.jpg}
 		\caption{Next Gen Film \cite{netflix-nextgen}}
 		\label{pic:netflix-nextgen}
 	\end{figure}
@@ -107,14 +112,14 @@
 	\section{Blender Foundation - Trocha Historie \\ \cite{wikiBlender}}
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=0.3]{Ton-Roosendaal.jpg}
+		\includegraphics[height=5cm]{Ton-Roosendaal.jpg}
 		\caption{Ton Roosednaal \cite{ton-roosendaal}}
 		\label{pic:ton-roosendaal}
 	\end{figure}
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=0.45]{man03.jpg}
+		\includegraphics[width=10cm]{man03.jpg}
 		\caption{Blender circa 2002 \cite{blender-man}}
 		\label{pic:blender-man}
 	\end{figure}
@@ -161,7 +166,7 @@
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=0.25]{ui/UI-1.png}
+		\includegraphics[width=12cm]{ui/UI-1.png}
 		\caption{Po spuštění}
 		\label{pic:startup-1}
 	\end{figure}
@@ -176,7 +181,7 @@
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=0.25]{ui/UI-2.png}
+		\includegraphics[width=12cm]{ui/UI-2.png}
 		\caption{Po spuštění (obarvené)}
 		\label{pic:startup-2}
 	\end{figure}
@@ -201,7 +206,7 @@
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=2]{ui/UI-WINDOWS.png}
+		\includegraphics[width=12cm]{ui/UI-WINDOWS.png}
 		\caption{Výběr oken}
 		\label{pic:windows-selection}
 	\end{figure}
@@ -239,7 +244,7 @@ objektem.
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=0.75]{ui/translated-cube.png}
+		\includegraphics[width=12cm]{ui/translated-cube.png}
 		\caption{Transformovaná Kostka (translace, rotace, škálování)}
 		\label{pic:cube-positioning}
 	\end{figure}
@@ -254,7 +259,7 @@ objektem.
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics[scale=0.4]{ui/Selected-Cube.png}
+		\includegraphics[width=12cm]{ui/Selected-Cube.png}
 		\caption{Volba objektů}
 		\label{pic:cube-selection}
 	\end{figure}
@@ -268,7 +273,7 @@ bude to jednoduché.
 		G & translace \\
 		R & rotace \\
 		S & rozměr
-	\end{tabular}
+	\end{tabular} \\ \newline
 	
 	Poté, co jste zvolili, co chcete s objektem dělat, můžete říct přímo
 	ve kterém směru. Tím, že stisknete jednu klávesu korespondující k jedné
@@ -288,17 +293,18 @@ bude to jednoduché.
 	Příklad:
 		\begin{figure}[h]
 			\centering
-			\includegraphics{ui/Rotary-Cube.png}
-			\includegraphics{ui/Rotary-Cube-1.png}
+			\includegraphics[height=5cm]{ui/Rotary-Cube.png}
+			\includegraphics[height=5cm]{ui/Rotary-Cube-1.png}
 			\caption{Ukázka Rotace}
 			\label{pic:cube-rotation}
 		\end{figure}
 	
-	Když mám zvolený objekt, stisknu R, napíšu 45 a stisknu Z. Krychle se miotočí, jak vidíte výše, o 45 stupňů dle svislé osy Z.
+	Když mám zvolený objekt, stisknu R, napíšu 45 a stisknu Z. Krychle se mi
+otočí, jak vidíte výše, o 45 stupňů dle svislé osy Z.
 	
 	\begin{figure}[h]
 		\centering
-		\includegraphics{ui/Rotary-Cube-2.png}
+		\includegraphics[height=0.75cm]{ui/Rotary-Cube-2.png}
 		\caption{Informace o změně}
 		\label{pic:cube-rotation-2}
 	\end{figure}
@@ -379,7 +385,7 @@ bude to jednoduché.
 	\end{figure}
 
 	\paragraph{Proporční editace} Při standartní editaci jsou ovlivněny pouze zvolené
-	části (první obrázek níže), ale to často není co potřebujete. Proporční
+	části (viz. \ref{pic:proportional1-3}), ale to často není co potřebujete. Proporční
 	editace je vcelku jasná z názvu - ovlivňuje i nezvolené části meshe, silou
 	odvíjející se dle jejich vzdálenosti od zvolených částí meshe. Pro zvětšení
 	nebo zmenšení ovlivněné části točíte kolečkem myši. „Connected only“
@@ -399,7 +405,8 @@ bude to jednoduché.
 		\label{pic:proportional1-3}
 	\end{figure}
 
-	\paragraph{/} Lomítkem schováte všechny nezvolené objekty. Opětovnýmstisknutím je pak zase zobrazíte.
+	\paragraph{/} Lomítkem schováte všechny nezvolené objekty. Opětovným
+stisknutím je pak zase zobrazíte.
 	
 	\subsubsection{Editační}
 	Zde - namísto editování celé scény, máte možnost zvlášť upravovat
@@ -455,7 +462,7 @@ bude to jednoduché.
 	Dva úkony, které slouží jako základ pro pokročilejší editaci, jsou Inset a
 	Extrude. Nalezneme je na klávesách [I] a [E]. Inset vesměs utvoří novou
 	stěnu napojenou stranami na tu původní a nechá Vás ji škálovat. Po
-	stisku klávesy [I] a posunutí myši, Vám zůstane kostka z obrázku výše
+	stisku klávesy [I] a posunutí myši, Vám zůstane kostka z obrázku \ref{pic:edit-actions}
 	nalevo. Extrude udělá stejné napojení, ale posléze je nová stěna
 	posunována, ne škálována. Tyto dvě operace lze aplikovat i na více stěnnajednou. Pokud jsou to stěny sousedící, akce bude provedena jako by se
 	jednalo pouze o jednu stěnu.
@@ -647,7 +654,7 @@ bude to jednoduché.
 	aplikovat z textury vzor.
 	Nad nastavením každého modifikátoru, vedle jména, je nastavení
 	zobrazení a dvě šipky, které vám umožňují posouvat jej nahoru nebo dolu
-	v pořadí aplikování. Toto je důležité, protože například na obrázku výše
+	v pořadí aplikování. Toto je důležité, protože například na obrázku \ref{pic:modifiers}
 	napravo, pokud bych aplikoval nejdříve Displace, tak by se aplikoval na
 	jednoduchý plain o čtyřech vertexech, což by akorát jeden z nich pozvedlo
 	a Multiresolution by poté nebyl moc platný, protože by stejně zůstala
@@ -657,7 +664,9 @@ bude to jednoduché.
 	Pokud potřebuji označit určitou část objektu – například, aby měla nějaké
 	specifické vlastnosti, používají se k tomu Vertexové skupiny. Všechny
 	funkce od simulace vlasů, až po částice pro znehybnění částí objektů, se
-	ptají, na kterou skupinu se mají aplikovat. Tyto nastavení se poznají dleikony:\includegraphics{icons/vertex-group.png}.
+	ptají, na kterou skupinu se mají aplikovat. Tyto nastavení se poznají dle
+ikony:
+\includegraphics{icons/vertex-group.png}.
 	
 	\begin{figure}[h]
 		\centering
@@ -692,13 +701,15 @@ bude to jednoduché.
 	složité auto skládající se z mnoha součástek, pro které tak mohu nastavit
 	v hierarchii jednu část jako nadřízenou. Když ji zvolím, pohybuji celým
 	autem a není potřeba vždy pohybovat každou součástkou zvlášť.
-	Jak nyní vidíte nejvýše v hierarchii máte [Kolekci]. Tyto jsou vyznačeny\includegraphics{icons/collection.png}. [Kolekce] slouží k uspořádání a napomáhají k přehlednosti. Zatržítko
+	Jak nyní vidíte nejvýše v hierarchii máte [Kolekci]. Tyto jsou vyznačeny
+\includegraphics{icons/collection.png}. [Kolekce] slouží k uspořádání a napomáhají k přehlednosti. Zatržítko
 	vedle kolekce zobrazí nebo schová všechny obsažené objekty. Objekt je
 	viditelný, pokud existuje jeho Link alespoň v jedné zobrazené kolekci. Ukolekcí je na pravém tlačítku myši, kromě možnosti přidat novou kolekci,
 	také množství úprav známé z objektů, ale zde se dají aplikovat na každý
 	objekt v kolekci naráz. V neposlední řadě je tu tlačítko „Instance to
 	Scene“, které vytvoří novou [Instanci] této kolekce a přidá jí do scény.
-	\paragraph{Instance kolekce} se značí\includegraphics{icons/collection-instance.png}
+	\paragraph{Instance kolekce} se značí
+\includegraphics{icons/collection-instance.png}
 	a je jakýmsi odrazem původní kolekce.
 	[Instance] je neupravitelná, ale budou se v ní projevovat změny
 	z původní kolekce. Toto se nejvíce hodí například pokud pracujete ve
@@ -827,10 +838,11 @@ bude to jednoduché.
 	Kdykoliv v Blenderu vepisujete čísla, ať už při transformaci nebo u
 	nastavení, je velmi pohodlné využít vestavěnou kalkulačku. Kdekoliv
 	můžete zadávat desetinná čísla, odčítat, sčítat, násobit i dělit.
-	\begin{itemize}
-		\item[] \includegraphics{other/int-input-1.png} $\rightarrow$ \includegraphics{other/int-input-2.png}
-		\item[] \includegraphics{other/int-input-3.png} $\rightarrow$ \includegraphics{other/int-input-4.png}
-	\end{itemize}
+
+{\centering
+	\begin{tabular}{ccc}
+		\includegraphics[width=5cm]{other/int-input-1.png} & $\rightarrow$ & \includegraphics[width=5cm]{other/int-input-2.png} \\ \includegraphics[width=5cm]{other/int-input-3.png} & $\rightarrow$ & \includegraphics[width=5cm]{other/int-input-4.png}
+	\end{tabular}}
 
 	\chapter{Objekty}
 	\section{Modelování}
@@ -845,8 +857,7 @@ bude to jednoduché.
 	stejně ale funguje vždy za pomocí [Tri]. Toto může stěžovat některé
 	úkony - jako například pokud chcete zvýraznit pouze to, co by normální
 	člověk bral jako kostru této kostky. Standartní WireFrame nodou
-	v materiálu je kostra kostky zvýrazněna právě tak, jako je na obrázku
-	výše.
+	v materiálu je kostra kostky zvýrazněna právě tak, jako je na obrázku.
 	Tímto přepínáte styl zobrazení. Zleva je to
 	Wireframe, kdy vidíte konstrukci jakoby drátěnou. Solid, což je klasický
 	pohled, který již znáte. LookDev je odlehčený Render. Zobrazuje téměř
@@ -1001,9 +1012,15 @@ bude to jednoduché.
 	\paragraph{Tabulka Barev (gandalf3, 2015):}
 	\begin{tabular}{ccl}
 		\toprule
-		Barva&	Typ& Zapojitelnost (Případně úprava dat provedenapři daném zapojení)\\
+		Barva
+&	Typ
+& Zapojitelnost (Případně úprava dat provedena
+při daném zapojení)
+\\
 		\midrule
-		Šedá & Číslo & Fialová a Žlutá (všechny tři hodnoty jsou tímsamým číslem)\\
+		Šedá & Číslo & Fialová a Žlutá (všechny tři hodnoty jsou tím
+samým číslem)
+\\
 		Žlutá & RGB & Fialová, Šedá (konvertuje na BW) \\
 		Fialová & 3D Vektor & Žlutá, Šedá (konvertuje na BW) \\
 		Zelená & Shader & Pouze zelená
@@ -1253,10 +1270,16 @@ bude to jednoduché.
 	\section{Soubory}
 	\paragraph{Typy souborů}
 	\begin{itemize}
-		\item[.blend] proprietární typ užívaný pouze Blenderem. Pokud jejpodporuje jiný software, vědomě podporuje Blender. Pokud máte pod File>External Data>Pack into .blendzaškrtnuto ano, externí soubory jako textury atd. jsou vloženypřímo do .blend souborů
-		\item[.blend1] Záložní .blend soubor. Po stisknutí tlačítka uložit, sestarý .blend soubor přepíše na .blend1 a změny se uloží do starého[.blend].
+		\item[.blend] proprietární typ užívaný pouze Blenderem. Pokud jej
+podporuje jiný software, vědomě podporuje Blender. Pokud máte pod File>External Data>Pack into .blend
+zaškrtnuto ano, externí soubory jako textury atd. jsou vloženy
+přímo do .blend souborů
+		\item[.blend1] Záložní .blend soubor. Po stisknutí tlačítka uložit, se
+starý .blend soubor přepíše na .blend1 a změny se uloží do starého
+[.blend].
 		\item[.obj] univerzální soubor obsahující pouze Meshe
-		\item[.stl] univerzální soubor obsahující pouze textury/materiály,téměř vždy přichází v páru s .obj souborem
+		\item[.stl] univerzální soubor obsahující pouze textury/materiály,
+téměř vždy přichází v páru s .obj souborem
 	\end{itemize}
 	
 	
@@ -1311,6 +1334,72 @@ bude to jednoduché.
 	záměrem neukázat jednoduše opsatelný postup, na konci kterého vlastně
 	nemáte ponětí, co jste udělali.
 	\section{Vaporwave}
+	\begin{enumerate}
+		\item zapněte bloom
+		\item přidejte si plane s dvěma Materiály tmavým a Emission
+		\begin{enumerate}
+		\item dejte na něj několik Multiresolution Simple Subdivide
+		s materiál Offset 1, vypnutý Replace Original a zvýšený
+		Thickness
+		\item přidejte na něj displace s Texturou hluku nejlépe s Texture
+		Coordinate nastaveno na nový Plane Axis objekt
+		\item přidejte dvakrát Modifier Array, jednou Relative offset podle
+		osy X a poté Y
+		\item Nyní můžete animovat Plane Axis a Displace se Vám bude
+		v průběhu animace měnit
+		\end{enumerate}
+		3) silnice je udělaná pomocí jedné cesty do tvaru S
+		a. poté Plane s Modifikátory Solidify, Bevel a Curve s Object
+		nastaveným na cestu (pokud vám Curve nefunguje,
+		zkontrolujte si Deformation Axis a zkuste ji změnit)
+		b. světla podél silnice jsou z malé Plane se stejným Solidify a
+		Bevel Modifikátorem s Array Modifikátorem na zdvojení, aby
+		světla byla na obou stranách. Druhý Array, který jich vytvoří
+		takové množství, aby sahala po celé délce silnice. Nakonec
+		přidáme Curve modifier stejný jako předtím
+		c. dejte si pozor na pořadí Modifikátorů
+		4) slunce, může být pouze koule s Emission Materiálem, ale abychom
+		dosáhli té pruhovanosti ve stylu Vaporwave, je třeba něčeho trochu
+		složitějšího.52
+		a. Texture Coordinate vezme souřadnice bodu na Slunci a
+		Separate XYZ vyseparuje svislou osu Z. Poté provedeme
+		Modulo operaci, což způsobí, že ve chvíli, kdy hodnota
+		přesáhne nějakou hranici, je resetována zpět na nulu
+		b. Takže máme číslo, které se pohybuje mezi 0 a 0.1 podle
+		výšky. To můžeme napojit do ColorRamp, která převede tuto
+		hodnotu na danou barvu
+		c. Fresnel dává hodnotu dle úhlu pohledu. V tomto případě to
+		znamená, že Slunce bude svítit na krajích více. Fresnel dává
+		ale moc nízké hodnoty, a tak je vynásobíme konstantou,
+		abyste ji mohli napojit přímo do síly záře
+		5) Kruhy kolem slunce mají základ v Extrudované kružnici, která poté
+		byla opakované Extrudována a Insetována
+		a. Poté jim byl přidán keyframe na všechny osy rotace a
+		v grafovém editoru v pravém menu pod modifiers byla na
+		každou osu přidána Built-In Function Sine s různými
+		Amplitudami a Offsety, aby měly zdánlivě „náhodnou“ rotaci
+		po celou dobu animace
+		6) Portál na konci silnice je velmi placatý válec s ozdobně
+		Extrudovaným a Insetovaným pláštěm
+		a. Seshora a zespoda má Voronoi Texture nodu obarvenou
+		s pomocí Color Rampy
+		b. Poté má připojen Mapping na svůj Vector, aby mohla být
+		v Mapping nodě animovaná Rotace, která způsobí pohyb naší
+		textury
+		c. Nezapomeňte u Mapping Nody použít Texture Coordinate
+		nodu7) Auto má na sobě stejný Wireframe Modifier jako síť. Poté jsem
+		udělal dvojitý loop cut, škáloval vertikálně dolů krajní stěny, a tím
+		máme zevrubný tvar. Poté si jej můžete vyzdobit jak moc nebo jak
+		málo se vám líbí
+		a. Na auto byl přidán Omezovač Follow Path, nastaven na cestu
+		z kroku 3. Přidal jsem několik málo Keyframe na rotaci, aby
+		byla hezčí v té zatáčce a skutečně tam byl pocit rychlosti
+		8) Pokud chcete, můžete dále experimentovat a přidělat kameru
+		například na auto. Zde se mi nejvíce osvědčil Limit Distance Modifier
+		9) Můžete zkusit přidat jakousi mlhu s pomocí kostky, která svým
+		obsahem zabírá celou scénu a má Volume Shader
+		
+	\end{enumerate}
 	\section{Jednoduchá krajina z výšky}
 	\section{Káva a svačina}
 	\section{Metro}
@@ -1319,71 +1408,148 @@ bude to jednoduché.
 	\section{Zkratky}
 	\begin{tabular}{cc}
 		\toprule
-		Zkratka& Použití\\
+		Zkratka
+& Použití
+\\
 		\midrule
-		Shift + A  & Přidat nový objekt nebo Nodu\\
-		Shift + D & Duplikovat zvolené\\
-		A & Zvolit vše / zvolit nic\\
-		/ & Schovat vše kromě zvoleného\\
-		TAB & Přepínání mezi módy Edit a Object\\
-		Ctrl + Shift + Alt +C & Menu Originu\\
-		Shift + S & Menu 3D kurzoru\\
-		T & Otevřít/Zavřít levé menu\\
-		N & Otevřít/Zavřít pravé menu\\
-		E & Extrude\\
-		I & Inset\\
-		S & Škálovat\\
-		R & Rotovat\\
-		T & Transformovat (Přemístit)\\
-		, & Zacentrovat pohled na zvolené\\
-		Ctrl + Alt + 0 & Nastavit pohled kamery na současný pohled\\
-		Ctrl + Mezerník & Maximalizovat okno\\
-		Shift + R & Volba tažením\\
-		Ctrl + R & Loop Cut\\
-		Shift + \^ & Přepnout 3D view do jakéhosi FPS módu navigace\\
-		Ctrl + L & Zvolit spojené Vertexe v Edit módu\\
-		0 & Pohled kamerou\\
-		Číslice & Nastavení pohledu rotací\\
-		Ctrl + Číslice & Pohyb pohledu ze strany na stranu\\
+		Shift + A  & Přidat nový objekt nebo Nodu
+\\
+		Shift + D & Duplikovat zvolené
+\\
+		A & Zvolit vše / zvolit nic
+\\
+		/ & Schovat vše kromě zvoleného
+\\
+		TAB & Přepínání mezi módy Edit a Object
+\\
+		Ctrl + Shift + Alt +
+C & Menu Originu
+\\
+		Shift + S & Menu 3D kurzoru
+\\
+		T & Otevřít/Zavřít levé menu
+\\
+		N & Otevřít/Zavřít pravé menu
+\\
+		E & Extrude
+\\
+		I & Inset
+\\
+		S & Škálovat
+\\
+		R & Rotovat
+\\
+		T & Transformovat (Přemístit)
+\\
+		, & Zacentrovat pohled na zvolené
+\\
+		Ctrl + Alt + 0 & Nastavit pohled kamery na současný pohled
+\\
+		Ctrl + Mezerník & Maximalizovat okno
+\\
+		Shift + R & Volba tažením
+\\
+		Ctrl + R & Loop Cut
+\\
+		Shift + \^ & Přepnout 3D view do jakéhosi FPS módu navigace
+\\
+		Ctrl + L & Zvolit spojené Vertexe v Edit módu
+\\
+		0 & Pohled kamerou
+\\
+		Číslice & Nastavení pohledu rotací
+\\
+		Ctrl + Číslice & Pohyb pohledu ze strany na stranu
+\\
 		Shift + Číslice & Náklon pohledu
 	\end{tabular}
 	
 	\section{Slovníček pojmů}
 	\begin{tabular}{cc}
 		\toprule
-		Pojem & Vysvětlení\\
+		Pojem & Vysvětlení
+\\
 		\midrule
-		RGB & Údaj o barvě uložený jako třiseparátní čísla. Hodnota červené,zelené a modré \\
-		BW & Údaj o barvě. Jedno čísloobsahující informaci o světlosti,tedy uchovává pouze černobílou.\\
-		CUDA ® & (Nvidia) Systém obsažen v Nvidia,grafických kartách. UmožňujeBlenderu direktně využívat danougrafickou kartu\\
-		Shell & Skořápka Meshe\\
-		Volume & Celý Mesh i s objemem\\
-		Mesh & Body a povrchy tvořící jedenobjekt\\
-		Vertex & Jeden vrchol na Mesh\\
-		Edge & Spojnice dvou Vertexů\\
-		Face & Povrch mezi alespoň třemi Vertexy\\
-		Wireframe & Mesh bez Face, jenom Edge aVertexy
+		RGB & \makecell{Údaj o barvě uložený jako tři
+separátní čísla.\\ Hodnota červené,
+zelené a modré} \\
+		BW & \makecell{Údaj o barvě. Jedno číslo
+obsahující informaci o světlosti, \\
+tedy uchovává pouze černobílou.}
+\\
+		CUDA® & \makecell{(Nvidia) Systém obsažen v Nvidia,
+grafických kartách.\\ Umožňuje
+Blenderu direktně využívat danou
+grafickou kartu}
+\\
+		Shell & Skořápka Meshe
+\\
+		Volume & Celý Mesh i s objemem
+\\
+		Mesh & Body a povrchy tvořící jeden
+objekt
+\\
+		Vertex & Jeden vrchol na Mesh
+\\
+		Edge & Spojnice dvou Vertexů
+\\
+		Face & Povrch mezi alespoň třemi Vertexy
+\\
+		Wireframe & Mesh bez Face, jenom Edge a
+Vertexy
 	\end{tabular}
 	
 	\section{Materiály}
+	Tady je několik málo Materiálů a jak je nastavit. Je zde klasický
+	povrchový materiál, jeden objemový materiál a složitěji matematický
+	definovaný Texturový materiál. Abyste měli trochu lepší představu, jak se
+	postupuje při vytváření takového materiálu.
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=5cm]{materials/Porcelain-Nodes.png}
+		\includegraphics[height=5cm]{materials/Porcelain-Sphere.png}
+		\caption{Porcelán}
+		\label{pic:material-porcelain}
+	\end{figure}
+
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=5cm]{materials/Mist.png}
+		\caption{Mlha}
+		\label{pic:material-mist}
+	\end{figure}
+	
+	\begin{figure}[h]
+		\centering
+		\includegraphics[height=5cm]{materials/BrokenWall-Nodes.png}
+		\includegraphics[height=5cm]{materials/BrokenWall-Sphere.png}
+		\caption{Rozbitá stěna}
+		\label{pic:material-wall}
+	\end{figure}
 	
 	\chapter{Užitečné odkazy}
-	\paragraph{Tutoriály} \newline
-	BlenderGuru.com
-	CGCookie.com
-	Youtube – Ducky 3D
-	\paragraph{Info} \newline
-	Docs.blender.org
-	\paragraph{Zdroje} \newline
-	Poliigon.com - textury
-	Textures.com - textury
-	Cc0textures.com - textury, s volnou licencí
-	SketchFab.com - 3D modely, jasně evidované licence, obsahuje i volné
+	\paragraph{Tutoriály}
+	\begin{itemize}
+	\item BlenderGuru.com
+	\item CGCookie.com
+	\item Youtube – Ducky 3D
+	\end{itemize}
+	\paragraph{Info}
+	\begin{itemize}
+	\item Docs.blender.org
+	\end{itemize}
+	\paragraph{Zdroje}
+	\begin{itemize}
+	\item Poliigon.com - textury
+	\item Textures.com - textury
+	\item Cc0textures.com - textury, s volnou licencí
+	\item SketchFab.com - 3D modely, jasně evidované licence, obsahuje i volné
 	licence
-	CGTrader.com - 3D modely
-	OpenGameArt.org - 3D modely, jasně evidované licence, obsahuje i volné
+	\item CGTrader.com - 3D modely
+	\item OpenGameArt.org - 3D modely, jasně evidované licence, obsahuje i volné
 	licence
-	
+	\end{itemize}
 	
 	\chapter{Závěr}
 	Již když jsem tuto práci psal, dostal jsem dost žádostí od lidí, zda si ji
