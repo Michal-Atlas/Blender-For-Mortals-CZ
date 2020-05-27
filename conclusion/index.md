@@ -1,0 +1,3 @@
+#  Závěr
+
+Již když jsem tuto práci psal, dostal jsem dost žádostí od lidí, zda si ji mohou přečíst nebo alespoň poznámky ohledně toho, že Blender už neúspěšně zkoušeli. To mi často dodávalo chuť ji dodělat a pocit, že bude mít smysl. Myslím, že až se zvýší množství lidí, kteří si ji přečetlo, zvýší se šance, že se objeví kvalitní a produktivní zpětná vazba, která práci bude nápomocná k jejímu vylepšení nebo rozšíření. Pokud by se uchytila a začala žít vlastním životem, byl by to nejvyšší stupeň úspěchu. Pevně doufám, že dopomůže mnohým k tomu začít se pohybovat alespoň mírně v této oblasti.
