@@ -4,15 +4,11 @@ Blender se svou rozmanitou funkčností snaží poskytnout co nejvíce možnost�
 
 Když poprvé spustíte Blender, tak vypadá následovně.
 
-![UI-1.png](media/image4.png){width="6.147998687664042in" height="3.256517935258093in"}
-
-4\. Po spuštění
+![Po spuštění](UI-1.jpg)
 
 Nejlépe je si přirovnat systém Blender k oknům u Vašeho počítače. Tak, jak máte na počítači otevřena mnohá okna vedle sebe (např.: prohlížeč, Word, mail atd.), stejně tak je to u Blenderu. Blender jako program má nespočet různých funkcí, které by byly absolutně nepochopitelné, kdyby byly ukázány všechny najednou. Proto jsou nástroje uvedeny do souvisejících oken, kdy každé z nich má sloužit k jednomu účelu - například okno pro umístění objektů do scény, okno pro jejich nastavení, okno pro editaci videa, okno pro práci s texturami atd.
 
-![UI-1.png](media/image5.png){width="6.060199037620298in" height="3.2100120297462817in"}
-
-5\. Po spuštění (obarvené)
+![Po spuštění (obarvené)](UI-2.jpg)
 
 Sledujme nyní obrázek 5. Modře je zaznačeno takzvané 3D zobrazovací okno, ve kterém budete pravděpodobně trávit nejvíce času. Zeleně je zvýrazněna Ćasová osa, která se používá hlavně při animacích. Napravo je červeně většina nastavení. Žlutě je Seznam objektů a skupin. Nakonec vršek lemuje informační panel, který obsahuje většinu ukládání, otvírání souborů a také se zde zobrazují procesy na pozadí jako vykreslování a fyzikální simulace.
 
@@ -20,9 +16,7 @@ Sledujme nyní obrázek 5. Modře je zaznačeno takzvané 3D zobrazovací okno, 
 
 Obsah okna lze změnit v malém menu obsaženém v každém z oken. Na začátku jsou nejlépe vidět dva v obou rozích levé strany programu. Poznají se podle obrázku, vedle nějž se nachází šipka dolů. Po kliknutí na toto menu se Vám otevře výběr všech druhů oken, které si nyní projdeme.
 
-![UI-WINDOWS.png](media/image6.png){width="6.023389107611549in" height="2.0337576552930883in"}
-
-6\. Výběr oken
+![Výběr oken](UI-WINDOWS.jpg)
 
 ## 3D Zobrazení
 
@@ -44,18 +38,19 @@ Objekt zvolíte stisknutím levého tlačítka myši kdekoli na něm.
 
 Pokud chcete zvolit více objektů najednou, přidržte k jejich volbě \[Shift\].
 
-7\. Transformovaná Kostka (translace, rotace, škálování)
+![Transformovaná Kostka (translace, rotace, škálování)](Translated-Cube.jpg)
 
 **Zvolení objektů** - Žlutým okrajem je zvýrazněn zvolený objekt. Ten je zobrazován a upravován v ostatních oknech. Oranžově jsou zvýrazněny další zvolené objekty, na které se také budou aplikovat translace nebo seskupování či další hromadné úpravy. Hlavním zvoleným objektem je vždy objekt, který byl do výběru přídán jako poslední. Blender referuje ke všem zvoleným objektům jako Selected a k hlavnímu zvolenému objektu jako active. Klávesou \[,\] zacentrujete pohled na zvolené objekty.
 
-8\. Volba objektů
+![Volba objektů](Selected-Cube.jpg)
 
 **Pohyb** - Zde se rovnou hodí zmínit o klávesových zkratkách, těch má Blender nespočetně, ale nyní jich budeme využívat jen několik. Nebojte, bude to jednoduché.
 
-  G   translace
---- -----------
-  R   rotace
-  S   rozměr
+|||
+|:---:|---|
+|G|   translace|
+ | R |  rotace|
+  |S|   rozměr|
 
 Poté, co jste zvolili, co chcete s objektem dělat, můžete říct přímo ve kterém směru. Tím, že stisknete jednu klávesu korespondující k jedné z os \[X, Y, Z\], změna se bude projevovat pouze na té ose. Pokud stisknete klávesu ještě jednou, tak zvolíte lokální osu namísto globální. Další stisknutí osu opět odemkne.
 
@@ -65,21 +60,19 @@ Pokud chcete změnu provést o specifickou hodnotu, můžete ji napsat na kláve
 
 Příklad:
 
-9\. Ukázka rotace
+![Ukázka rotace #1](Rotary-Cube.jpg)![Ukázka rotace #2](Rotary-Cube-1.jpg)
 
 Když mám zvolený objekt, stisknu R, napíšu 45 a stisknu Z. Krychle se mi otočí, jak vidíte výše, o 45 stupňů dle svislé osy Z.
 
-10\. Informace o změně
+![Informace o změně](Rotary-Cube-2.jpg)
 
 Vlevo nahoře poté máme informace o současné probíhající změně, pokud ji chcete dodatečně měnit. Hodnotu lze dokonce standartně přepisovat klávesou \[Backspace\] a šipkami. Změna se potvrdí klávesou \[Enter\] nebo levým tlačítkem myši. Vráti lze klávesou \[Esc\] nebo pravým tlačítkem myši.
 
 Nové objekty lze přidávat z menu dostupného klávesovou zkratkou \[Shift+A\].
 
-![](media/image7.png){width="0.5889566929133858in" height="1.0539206036745408in"}
-
-11\. Výběr/3D Kurzor Spínač
-
 **3D Kurzor** - Vlevo vidíte tento spínač, pokud je nastaven na spodní hodnotu, levé tlačítko myši namísto volení objektů, začne přemisťovat tzv. 3D Kurzor. Tento kurzor slouží k pár účelům. Jednak je to místo, kde se objevují nově přidané objekty, ale především slouží jako arbitrární přemístitelný bod v prostoru. Pomocí menu na zkratce \[Shift+S\] můžete přemístit 3D Kurzor na nějaké specifické místo nebo přemístit objekt na 3D Kurzor.
+
+![Výběr/3D Kurzor Spínač](workspace/3DCursor.jpg)
 
 **Origin** -- neboli počáteční bod, vyznačen na objektech malou žlutou tečkou, určuje jakousi jednotnou definici pro daný objekt. Protože objekt je často složen i ze stovek bodů, je potřeba jeden jasný bod, ke kterému lze referovat - například při zapisování jeho pozice. Pokud nahlédnete do vlastností objektu, vidíte zde pouze souřadnice jediného bodu, definující pozici celého objektu - tímto bodem je právě pivotový bod. Všechny transformace se také provádí se středem v pivotovém bodu, pokud není řečeno jinak. Nejlépe se nastavuje v menu Object \> Set Origin.
 
@@ -87,17 +80,17 @@ Na vrchu okna poté máte několik dalších nástrojů. Nejdříve popišme ty 
 
 **Pivotovým bodem** - (Pivot point) se rozumí bod, vůči kterému jsou prováděny operace.
 
-![A screenshot of a cell phone Description automatically generated](media/image8.png){width="1.8799464129483814in" height="2.08882874015748in"}
-
-12\. Menu pivotového bodu 13. Ukázka pivotového bodu
+![Pivot #1](workspace/pivot0.jpg)![Pivot #2](workspace/pivot2.jpg)![Pivot #3](workspace/pivot03.jpg)
 
 Například výše byly umístěny dvě krychle, jedna nalevo a jedna napravo, od středu na stejnou úroveň. Obě byly otočeny o 45°, ta vlevo kolem Originu a ta napravo kolem 3D Kurzoru.
 
 **Snap** - Další je menu něčeho nazývané Snap. Nejlépe by toto bylo přeloženo jako záchytné body. Magnetem se zapíná a vypíná, napravo vybíráte na co se změny chytají. Pokud máte například zapnutý Snap na Face, tak kdykoli provádíte změnu, například přemisťujete objekt, a vaše myš narazí na jakoukoli stěnu, objekt se na ni přichytí. Většinou to provede tak, že jeho nejbližší bod nastaví přesně na daný záchytný bod.
 
+![Snap Menu](workspace/Snap.jpg)
+
 **Proporční editace** - Při standartní editaci jsou ovlivněny pouze zvolené části (první obrázek níže), ale to často není co potřebujete. Proporční editace je vcelku jasná z názvu - ovlivňuje i nezvolené části meshe, silou odvíjející se dle jejich vzdálenosti od zvolených částí meshe. Pro zvětšení nebo zmenšení ovlivněné části točíte kolečkem myši. „Connected only" bude ovlivňovat pouze části meshe, které jsou direktně spojené se zvolenými částmi. „Projected from view" určuje střed, od kterého se počítá vzdálenost, a následně tedy i síla změny pro daný bod. Pokud je vypnutý, změny se odvíjí od standartního středu definovaného pivotovým bodem. Pokud je zapnutý, střed je nejlépe popsán jako polopřímka začínající z místa vašeho pohledu a procházející pivotovým bodem.
 
-14\. Proporční editace (Bez, s, změna velikosti)
+![Proporční editace (Bez, s, změna velikosti)](workspace/Proportional0.jpg)![Proporční editace (Bez, s, změna velikosti)](workspace/Proportional1.jpg)![Proporční editace (Bez, s, změna velikosti)](workspace/Proportional2.jpg)![Proporční editace (Bez, s, změna velikosti)](workspace/Proportional3.jpg)
 
 **/** - Lomítkem schováte všechny nezvolené objekty. Opětovným stisknutím je pak zase zobrazíte.
 
@@ -105,7 +98,11 @@ Například výše byly umístěny dvě krychle, jedna nalevo a jedna napravo, o
 
 Zde - namísto editování celé scény, máte možnost zvlášť upravovat zvolený objekt včetně meshe. Zde můžete nastavovat i související věci jako \[Vertex Group\] nebo \[Material\], každé jednotlivé strany.
 
+![Selector](workspace/Selector.jpg)
+
 V tomto menu si vybíráte, zda volíte roh, hranu nebo stěnu. Zatím nechme toto nastavené na stěny a ukažme si úkony, které lze dělat. Tyto jsou nejlépe ilustrované na stěnách, ale všechny platí také pro hrany a rohy.
+
+![Selekce](workspace/Selection.jpg)![CTRL](workspace/CTRL.jpg)
 
 Volí se stejně jako u objektů - levým tlačítkem myši a přidržením \[Shift\] na zvolení více najednou. Rozdíl je, že hlavní zvolená stěna je zabarvena stejně jako ostatní, pouze je opatřena bílým obtažením.
 
@@ -115,21 +112,21 @@ Kombinace \[Alt + Shift\] se pokusí nalézt jakousi cykličnost ve Vašem objek
 
 Co se týká translace, rotace atd. vše je stejné jako u celých objektů. Fungují zde stejné zkratky a principy.
 
+![I](workspace/I.jpg)![Extruze](workspace/Extrude.jpg)![Intruze](workspace/Intrude.jpg)
+
 Dva úkony, které slouží jako základ pro pokročilejší editaci, jsou Inset a Extrude. Nalezneme je na klávesách \[I\] a \[E\]. Inset vesměs utvoří novou stěnu napojenou stranami na tu původní a nechá Vás ji škálovat. Po stisku klávesy \[I\] a posunutí myši, Vám zůstane kostka z obrázku výše nalevo. Extrude udělá stejné napojení, ale posléze je nová stěna posunována, ne škálována. Tyto dvě operace lze aplikovat i na více stěn najednou. Pokud jsou to stěny sousedící, akce bude provedena jako by se jednalo pouze o jednu stěnu.
 
 \[Shift + A\] funguje i v edit módu a přidá nový mesh do stejného objektu. Může se to zdát jako přidání nového objektu, ale všechny tyto části zastřešeny pod jedním objektem mají jediný Origin a sdílí mezi sebou všechny Omezovače a Modifikátory. Pro zvolení celé jedné spojené meshe je dobrá klávesová zkratka \[Ctrl + L\].
 
-15\. Loop Cut
-
 **Loop Cut** - Zkratkou \[Ctrl+R\] můžete provézt takovýto řez. Myší zvolíte, kde se má provést a napsáním čísla zvolíte na kolik částí takovýto řez rozdělí objekt. Výše bylo užito rozdělení na pět částí.
+
+![Loop Cut](workspace/Loop-Cut.jpg)
 
 **Oddělování a Slučování** -- Stisknutím klávesy \[P\] se Vám otevře menu, ve kterém si můžete vybrat, dle čeho oddělíte část Vašeho současného objektu do objektu nového.
 
 ### Kamera
 
-![](media/image9.png){width="3.374233377077865in" height="2.3263746719160103in"}
-
-16\. Kamera
+![Kamera](workspace/Camera.jpg)
 
 Stejné jako v realitě na scéně musí být kamera, která zaznamenává světlo odrážející se od scenérie. Pro vykreslování budeme většinou v Blenderu používat něco podobného. Pokud děláme cokoliv složitější než jeden model, který si otáčíme uprostřed obrazovky, je potřeba počítači říct, jak má scénu zobrazovat. Kamer může být více a každá obsahuje spoustu informací - například ohledně její pozice, rotace, perspektivy, objektivu a mnohé další.
 
@@ -147,23 +144,18 @@ Scéna má většinou nastavenou jednu kameru jakožto výchozí. Při stisku \[
 
 Pod nastavením čočkou máte čtyři důležité možnosti:
 
-1.  Typ: Perspektivní nebo Ortografická (viz. Perspektivy str.48)
-
-2.  Focal Length: V podstatě optické přiblížení - zoom
-
-3.  Shift: Toto se týká fotografického efektu zvaného Tilt-shift. Je moc náročné to zde vysvětlit, ale jsou na něj mnohé jiné zdroje.
-
-4.  Clip: Říká kameře jaké rozpětí vzdáleností má zobrazit. Pokud je start nastaven na 10m a konec na 20m, kamera neuvidí nic blíže než 10m a vzdálenější než 20m. Pokud objekt leží přesně na hranici, zobrazí se pouze jeho část.
+1. Typ: Perspektivní nebo Ortografická (viz. Perspektivy str.48)
+2. Focal Length: V podstatě optické přiblížení - zoom
+3. Shift: Toto se týká fotografického efektu zvaného Tilt-shift. Je moc náročné to zde vysvětlit, ale jsou na něj mnohé jiné zdroje.
+4. Clip: Říká kameře jaké rozpětí vzdáleností má zobrazit. Pokud je start nastaven na 10m a konec na 20m, kamera neuvidí nic blíže než 10m a vzdálenější než 20m. Pokud objekt leží přesně na hranici, zobrazí se pouze jeho část.
 
 ##### Viewport Display
 
 Pro výsledek irelevantní, ale při práci velmi užitečný. Kamera je dosti komplexní záležitost a bylo by kontraproduktivní mít stále zobrazeny všechny informace o ní. Tady si vybíráme přesně ty, které chceme vidět v \[Okno 3D zobrazení\].
 
-1.  Size: velikost ikony kamery
-
-2.  Limits: zobrazuje odkud kam je nastaven \[Clip\]
-
-3.  Name: pro účel přehlednosti větších kamerových sestav si můžeme vždy nechat zobrazit jméno kamery, jejíž pohled máme zobrazen
+1. Size: velikost ikony kamery
+2. Limits: zobrazuje odkud kam je nastaven \[Clip\]
+3. Name: pro účel přehlednosti větších kamerových sestav si můžeme vždy nechat zobrazit jméno kamery, jejíž pohled máme zobrazen
 
 Toto nastavení má většina objektů. Má rozdílné parametry dle příslušného objektu, ale stejný účel.
 
@@ -195,6 +187,8 @@ Pokud vykreslujete pouze snímek, na výběr máte standartní \[.png\], \[.jpg\
 
 Navzdory prvotním pozorováním si všimneme, že není pozadí Vaší scény jen prázdný kanvas. Má materiál jako každý jiný objekt, využívá se převážně jako pozadí scény a pro osvětlení.
 
+![Svět](World.jpg)
+
 Nastavit tento materiál lze pod Shader Editor \> World.
 
 Z mé osobní zkušenosti nedoporučuji u komplexnějších scén používat k osvětlení pouze Svět, protože toto světlo vypadá velmi uměle, neboť působí ze všech směrů identicky, což nevypadá dobře.
@@ -215,6 +209,8 @@ Popsáno v kapitole Materiály na straně 37.
 
 Omezovače jsou definovaný vztah mezi dvěma objekty.
 
+![Omezovače #1](constraints/limit-1.jpg)![Omezovače #2](constraints/limit-2.jpg)![Omezovače #3](constraints/limit-3.jpg)
+
 Tyto vztahy sahají od kopírování rotace a pohybu po limitaci vzdálenosti mezi dvěma objekty. Aplikují se na objekt, se kterým se nehýbe -- ten, který má být omezovačem upraven. Výše byl aplikován omezovač „Limit Distance" na sféroid a s cílem na krychli. Nyní pohyb krychle zdánlivě pohne sféroidem, pokud je dostatečně vzdálená. Zdánlivě, protože jeho origin se nezmění, vypadá, že se pohnul, avšak pokud se podíváte do jeho vlastností, zjistíte, že jeho souřadnice se nezměnily.
 
 Často používaný omezovač je „Follow Path", kdy definujete objektu cestu a čas, a on se po ní bude v daném čase pohybovat.
@@ -222,6 +218,8 @@ Tyto vztahy sahají od kopírování rotace a pohybu po limitaci vzdálenosti me
 ### Modifikátory (Modifiers)
 
 Modifikátory jsou procedurální efekty aplikované většinou na Mesh daného objektu. Jako příklady lze uvést nakopírování objektu za sebe, odečtení jednoho objektu od druhého, zarovnání rohů nebo zvýšení a snížení množství \[Tri\]. Celý smysl spočívá v tom, že tyto změny nejsou hned aplikovány, ale setrvávají na objektu. Takže pokud změním mesh, modifikátor se okamžitě přizpůsobí - dokud nestisknu Aplikovat, což natrvalo změní mesh a smaže Modifikátor. Modifikátorů mohu mít více najednou. Aplikují se vždy od vrchního tak, že každý následující pracuje již s meshem upraveným modifikátory předchozími.
+
+![Modifiers #1](modifiers/Modifiers-1.jpg)![Modifiers #2](modifiers/Modifiers-SSM.jpg)
 
 Nalevo je jednoduchá ukázka „Subsurface Modifier", který se pokouší vyhlazovat meshe. Jako nafouknout uvnitř nich balónek a použít tento nový tvar jako tvar objektu. Napravo je pak kombinace „multiresolution", který zvýší jednoduché ploše množství stěn, aby poté „displace" mohl aplikovat z textury vzor.
 
