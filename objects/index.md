@@ -1,5 +1,9 @@
 # Objekty
 
+{::options auto_ids="true" /}
+1. TOC_TEST
+{:toc}
+
 ## Modelování
 
 ### Polygony

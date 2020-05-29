@@ -1,5 +1,10 @@
 # Interface
 
+{::options auto_ids="true" /}
+1. TOC_TEST
+{:toc}
+
+
 Blender se svou rozmanitou funkčností snaží poskytnout co nejvíce možností a do toho je musí udržet přístupné a přehledné. K tomuto využívá systém oken, o kterém si nyní něco můžeme říct.
 
 Když poprvé spustíte Blender, tak vypadá následovně.

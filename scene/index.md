@@ -1,5 +1,9 @@
 # Scéna
 
+{::options auto_ids="true" /}
+1. TOC_TEST
+{:toc}
+
 ## Světlo
 
 Na počítači se bez něj obejít můžeme, ale Blender a většina jiných grafických programů, s ním v základu pracuje. Za účelem realizmu používáme tzv. RayTracing. Toto znamená, že počítač simuluje reálné chování světla zjednodušeným modelem. Spočítá čáry od každého zdroje světla a sleduje, kam dopadnou a jak se odrazí. Podle toho zjišťuje a nastavuje světlost daných bodů na povrchu. Pokud používáme RayTracing, každý povrch obsahuje nějakou informaci o tom, kolik světla pohltí (vlastní světlost), kolik ho odrazí (lesklost), atd. O tom v kapitolách objekty, nyní si spíše probereme trochu názvosloví.

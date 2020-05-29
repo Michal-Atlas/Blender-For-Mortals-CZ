@@ -1,5 +1,9 @@
 # Ukázky / Cvičení
 
+{::options auto_ids="true" /}
+1. TOC_TEST
+{:toc}
+
 Možná jste právě dočetly tuto práci a nevíte kde začít s nápadem, nevíte kde začít s Meshem, jediné co na toto pomůže jsou zkušenosti, ale pro rámcovou představu kde začít, následuje několik velmi jednoduchých ukázek Renderů. U kterých v rychlosti rozeberu, jak byly dělány, abyste si mohli vytvořit trochu představu o tom, jak začít, co z čeho dělat a za pomocí jakých nástrojů. Záměrně jsou vynechány specifické detaily se záměrem neukázat jednoduše opsatelný postup, na konci kterého vlastně nemáte ponětí, co jste udělali.
 
 ## Vaporwave
