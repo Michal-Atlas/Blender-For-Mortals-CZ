@@ -22,17 +22,18 @@ Pokud se zajímáte spíše o vesmír, NASA vydala některé z jejích modelů 
 
 Takže jak sami vidíte, není toho málo.
 
-![Next Gen film od Netflix](next-gen.jpg)
+![Next Gen film od Netflix](nhttps://occ-0-2773-2774.1.nflxso.net/dnm/api/v6/6AYY37jfdO6hpXcMjf9Yu5cnmO0/AAAABT4k_AHT1gZEGQdbyP2bzRgZjy2R4jBUhMgr5QF1F4CgiTBN3eMjbnf4brwclzSL9m2Uq2qJ6sz5UPzIUPJ-BIKruDze.jpg?r=06e)(Netflix, 2018)[^Netflix_2018]
 
 ## Blender FOUNDATION -- Trocha Historie
 
-(Blender (software), n. d.)[^Blender]
-
-![Ton Roosendaal](ton-roosendaal.jpg)![Stránka Manuálu pro Blender circa 2002](man03.jpg)
+![Ton Roosendaal](https://upload.wikimedia.org/wikipedia/commons/9/98/Ton_Roosendaal_on_Big_Buck_Bunny_premiere_by_William_Maanders_2008.jpg)(Maanders, 2008)[^Maanders_2008]
+![Stránka Manuálu pro Blender circa 2002](https://www.rpi.edu/dept/acm/packages/blender/man/manual_1.02/man/man03.jpg)(Rensselaer, 1998)[^Rensselaer_1998]
 
 NeoGeo bylo dánské animační studio, které roku 1994 začalo vytvářet Blender pro firemní použití. Hlavním autorem byl Ton Roosendaal -- tehdejší spolumajitel firmy. V roce 1995 už měli funkční verzi 1.0 a 1. ledna 1998 byl jejich program vydán jako freeware -- volně dostupný na internetu. Ještě ten samý rok byla firma NeoGeo zanikla a Roosendaal založil svoji vlastní firmu Not a Number Technologies (NaN), za účelem dále rozvíjet projekt Blender. NaN roku 2002 zkrachovala a Roosendaal ještě téhož roku založil neziskovou organizaci Blender Foundation.
 
 Blender Foundation se během následujících let pokoušel udělat Blender Open-Source (prozatím byl Blender pouze volně dostupný jako celý program, open-source znamená, že bude i volně upravitelný a bude na něm moct pracovat kdokoli). Roosendaal vybral svůj cíl 100 000 euro od lidí a dosáhl svého cíle. Dodnes je Blender vyvíjen hlavně jeho komunitou a čtyřmi programátory zaměstnanými u Blender Foundation.
+
+(Blender (software), n. d.)[^Blender]
 
 ## Blender není jen na 3D modelaci
 
@@ -49,3 +50,5 @@ Roztroušenost vývoje donutila Blender využívat tzv. pluginy. Plugin je funkc
 [^Failes_2016]: (Failes, 2016): Failes, Ian. 2016. MovieMaker. Building the World of Warcraft: An In-Depth Conversation With Visual Effects Supervisor Bill Westenhofer. [Online] 22. 6 2016. https://www.moviemaker.com/creating-warcraft-interview-visual-effects-supervisor-bill-westenhofer/.
 [^Veldhuizen_2018]: (Veldhuizen, 2018): Veldhuizen, Bart. 2018. BlenderNation. "Next Gen" - Blender Production by Tangent Animation soon on Netflix! [Online] 20. Srpen 2018. https://www.blendernation.com/2018/08/20/next-gen-blender-production-by-tangent-animation-soon-on-netflix/.
 [^Blender]: Blender (software), Wikipedia. n. d.. Blender (software). Wikipedia. [Online] n. d.. n. d. n. d. https://en.wikipedia.org/wiki/Blender_(software).
+[^Rensselaer_1998]: (Rensselaer, 1998): Rensselaer. 1998. Rensselaer. BlenderManual. [Online] 1998. http://www.rpi.edu/dept/acm/packages/blender/man/manual_1.02/man/manual02.1a.html.
+[^Maanders_2008]: (Maanders, 2008): Maanders, William. 2008. File:Ton Roosendaal on Big Buck Bunny premiere by William Maanders 2008.jpg. Wikimedia. [Online] 2008. https://commons.wikimedia.org/wiki/File:Ton_Roosendaal_on_Big_Buck_Bunny_premiere_by_William_Maanders_2008.jpg.
