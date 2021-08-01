@@ -541,10 +541,9 @@ zůstala placatá Plane.
 nějaké specifické vlastnosti, používají se k tomu Vertexové skupiny.
 Všechny funkce od simulace vlasů, až po částice pro znehybnění částí
 objektů, se ptají, na kterou skupinu se mají aplikovat. Tyto nastavení
-se poznají dle ikony: [[vgroups]].
+se poznají dle ikony: .
 
 #+CAPTION: Vertexové skupiny
-#+CUSTOM_ID: vgroups
 [[file:assets/02-interface/vertex-group.jpg]]
 
 Skupiny se tvoří a mažou zde ve „Vertex Groups” - plusem a mínusem. Když
