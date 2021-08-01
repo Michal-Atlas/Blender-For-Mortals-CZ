@@ -286,7 +286,7 @@ myš narazí na jakoukoli stěnu, objekt se na ni přichytí. Většinou to
 provede tak, že jeho nejbližší bod nastaví přesně na daný záchytný bod.
 
 #+caption: Snap Menu
-[[file:assets/workspace/Snap.jpg]]
+[[file:assets/02-interface/workspace/Snap.jpg]]
 
 *Proporční editace* - Při standartní editaci jsou ovlivněny pouze
 zvolené části (první obrázek níže), ale to často není co potřebujete.
@@ -301,10 +301,10 @@ pivotovým bodem. Pokud je zapnutý, střed je nejlépe popsán jako
 polopřímka začínající z místa vašeho pohledu a procházející pivotovým
 bodem.
 
-[[file:assets/workspace/Proportional0.jpg]]
-[[file:assets/workspace/Proportional1.jpg]]
-[[file:assets/workspace/Proportional2.jpg]]
-[[file:assets/workspace/Proportional3.jpg]]
+[[file:assets/02-interface/workspace/Proportional0.jpg]]
+[[file:assets/02-interface/workspace/Proportional1.jpg]]
+[[file:assets/02-interface/workspace/Proportional2.jpg]]
+[[file:assets/02-interface/workspace/Proportional3.jpg]]
 
 */* - Lomítkem schováte všechny nezvolené objekty. Opětovným stisknutím
 je pak zase zobrazíte.
@@ -315,14 +315,14 @@ zvolený objekt včetně meshe. Zde můžete nastavovat i související věci
 jako [Vertex Group] nebo [Material], každé jednotlivé strany.
 
 #+caption: Selector
-[[file:assets/workspace/Selector.jpg]]
+[[file:assets/02-interface/workspace/Selector.jpg]]
 
 V tomto menu si vybíráte, zda volíte roh, hranu nebo stěnu. Zatím nechme
 toto nastavené na stěny a ukažme si úkony, které lze dělat. Tyto jsou
 nejlépe ilustrované na stěnách, ale všechny platí také pro hrany a rohy.
 
-[[file:assets/workspace/Selection.jpg]]
-[[file:assets/workspace/CTRL.jpg]]
+[[file:assets/02-interface/workspace/Selection.jpg]]
+[[file:assets/02-interface/workspace/CTRL.jpg]]
 
 Volí se stejně jako u objektů - levým tlačítkem myši a přidržením
 [Shift] na zvolení více najednou. Rozdíl je, že hlavní zvolená stěna je
@@ -339,9 +339,9 @@ tyto volby žlutě.
 Co se týká translace, rotace atd. vše je stejné jako u celých objektů.
 Fungují zde stejné zkratky a principy.
 
-[[file:assets/workspace/I.jpg]]
-[[file:assets/workspace/Extrude.jpg]]
-[[file:assets/workspace/Intrude.jpg]]
+[[file:assets/02-interface/workspace/I.jpg]]
+[[file:assets/02-interface/workspace/Extrude.jpg]]
+[[file:assets/02-interface/workspace/Intrude.jpg]]
 
 Dva úkony, které slouží jako základ pro pokročilejší editaci, jsou Inset
 a Extrude. Nalezneme je na klávesách [I] a [E]. Inset vesměs utvoří
@@ -363,7 +363,7 @@ zvolíte, kde se má provést a napsáním čísla zvolíte na kolik částí
 takovýto řez rozdělí objekt. Výše bylo užito rozdělení na pět částí.
 
 #+caption: Loop Cut
-[[file:assets/workspace/Loop-Cut.jpg]]
+[[file:assets/02-interface/workspace/Loop-Cut.jpg]]
 
 *Oddělování a Slučování* -- Stisknutím klávesy [P] se Vám otevře menu,
 ve kterém si můžete vybrat, dle čeho oddělíte část Vašeho současného
@@ -371,7 +371,7 @@ objektu do objektu nového.
 
 *** Kamera
             #+caption: Kamera
-[[file:assets/workspace/Camera.jpg]]
+[[file:assets/02-interface/workspace/Camera.jpg]]
 
 Stejné jako v realitě na scéně musí být kamera, která zaznamenává světlo
 odrážející se od scenérie. Pro vykreslování budeme většinou v Blenderu
@@ -466,7 +466,7 @@ prázdný kanvas. Má materiál jako každý jiný objekt, využívá se převá
 jako pozadí scény a pro osvětlení.
 
 #+caption: Svět
-[[file:assets/World.jpg]]
+[[file:assets/02-interface/World.jpg]]
 
 Nastavit tento materiál lze pod Shader Editor > World.
 
@@ -493,9 +493,9 @@ zobrazují ve [3D Viewport].
 *** Omezovače (Constraints)
             Omezovače jsou definovaný vztah mezi dvěma objekty.
 
-[[file:assets/constraints/limit-1.jpg]]
-[[file:assets/constraints/limit-2.jpg]]
-[[file:assets/constraints/limit-3.jpg]]
+[[file:assets/02-interface/constraints/limit-1.jpg]]
+[[file:assets/02-interface/constraints/limit-2.jpg]]
+[[file:assets/02-interface/constraints/limit-3.jpg]]
 
 Tyto vztahy sahají od kopírování rotace a pohybu po limitaci vzdálenosti
 mezi dvěma objekty. Aplikují se na objekt, se kterým se nehýbe -- ten,
@@ -519,8 +519,8 @@ natrvalo změní mesh a smaže Modifikátor. Modifikátorů mohu mít více
 najednou. Aplikují se vždy od vrchního tak, že každý následující pracuje
 již s meshem upraveným modifikátory předchozími.
 
-[[file:assets/modifiers/Modifiers-1.jpg]]
-[[file:assets/modifiers/Modifiers-SSM.jpg]]
+[[file:assets/02-interface/modifiers/Modifiers-1.jpg]]
+[[file:assets/02-interface/modifiers/Modifiers-SSM.jpg]]
 
 Nalevo je jednoduchá ukázka „Subsurface Modifier”, který se pokouší
 vyhlazovat meshe. Jako nafouknout uvnitř nich balónek a použít tento
@@ -545,7 +545,7 @@ se poznají dle ikony: [[vgroups]].
 
 #+CAPTION: Vertexové skupiny
 #+CUSTOM_ID: vgroups
-[[file:assets/vertex-group.jpg]]
+[[file:assets/02-interface/vertex-group.jpg]]
 
 Skupiny se tvoří a mažou zde ve „Vertex Groups” - plusem a mínusem. Když
 máte zvolenou skupinu a vertexy na Vašem objektu, tlačítky Assign a
@@ -578,7 +578,7 @@ zvlášť.
 
 Jak nyní vidíte nejvýše v hierarchii máte [Kolekci]. Tyto jsou vyznačeny:
 
-[[file:assets/icon_collection.jpg]]
+[[file:assets/02-interface/icon_collection.jpg]]
 
 [Kolekce] slouží k uspořádání a napomáhají
 k přehlednosti. Zatržítko vedle kolekce zobrazí nebo schová všechny
@@ -590,7 +590,7 @@ je tu tlačítko „Instance to Scene”, které vytvoří novou [Instanci] tét
 kolekce a přidá jí do scény.
 
 *Instance kolekce* -- se značí
-[[file:assets/icon_collection-instance.jpg]]
+[[file:assets/02-interface/icon_collection-instance.jpg]]
 a
 je jakýmsi odrazem původní kolekce. [Instance] je neupravitelná, ale
 budou se v ní projevovat změny z původní kolekce. Toto se nejvíce hodí
@@ -704,20 +704,20 @@ tečka nahrazena kosočtvercem. Pokud má v daném čase (viz. Timeline
 str.27) nastavení zatržítko v tomto kosočtverci, znamená to, že pro
 tento čas je nastaven keyframe (viz. Key-Framing str.39).
 
-[[file:assets/animated-setting.jpg]]
+[[file:assets/02-interface/animated-setting.jpg]]
 
 *** Chytré vstupy
             Kdykoliv v Blenderu vepisujete čísla, ať už při transformaci nebo u
 nastavení, je velmi pohodlné využít vestavěnou kalkulačku. Kdekoliv
 můžete zadávat desetinná čísla, odčítat, sčítat, násobit i dělit.
 
-[[file:assets/int-input-1.jpg]]
+[[file:assets/02-interface/int-input-1.jpg]]
 >>
-[[file:assets/int-input-2.jpg]]
+[[file:assets/02-interface/int-input-2.jpg]]
 
-[[file:assets/int-input-3.jpg]]
+[[file:assets/02-interface/int-input-3.jpg]]
 >>
-[[file:assets/int-input-4.jpg]]
+[[file:assets/02-interface/int-input-4.jpg]]
 
 * Objekty
 
@@ -729,7 +729,7 @@ drží informaci o bodech a jejich spojích v prostoru. Body spojené tak,
 polygony vždy ze skupin právě tří spojených bodů. I krychle dodržuje
 toto pravidlo:
 
-[[file:assets/tri.jpg]]
+[[file:assets/03-objects/tri.jpg]]
 
 Má 8 bodů a každá strana je tvořena dvěma trojúhelníky. Ty se často
 přezdívají Tri [traj] (Tris [trajs] v množném čísle).
@@ -741,7 +741,7 @@ stejně ale funguje vždy za pomocí [Tri]. Toto může stěžovat některé
 člověk bral jako kostru této kostky. Standartní WireFrame nodou
 v materiálu je kostra kostky zvýrazněna právě tak, jako je na obrázku
 výše.
-[[file:assets/3D_View.jpg]]
+[[file:assets/03-objects/3D_View.jpg]]
 Tímto přepínáte styl zobrazení. Zleva je to
 Wireframe, kdy vidíte konstrukci jakoby drátěnou. Solid, což je klasický
 pohled, který již znáte. LookDev je odlehčený Render. Zobrazuje téměř
@@ -835,7 +835,7 @@ místě při automatickém rozložení, zvolte ji a stiskněte [P].
                Textura je to, co dává objektu jeho barvu.
 
 #+caption: IcoSphere-Texture
-[[file:assets/IcoSphere-Texture.jpg]]
+[[file:assets/03-objects/IcoSphere-Texture.jpg]]
 
 Aplikují se v Shader Editoru především pomocí Nody Image Texture. To Vám
 vesměs stačí, ale pokud ji chcete ještě škálovat nebo s ní pohybovat,
@@ -860,9 +860,9 @@ textur jako specifické Nody.
 
 **** Normály
 
-[[file:assets/normal.jpg]]
-[[file:assets/normal-1.jpg]]
-[[file:assets/normal-2.jpg]]
+[[file:assets/03-objects/normal.jpg]]
+[[file:assets/03-objects/normal-1.jpg]]
+[[file:assets/03-objects/normal-2.jpg]]
 
 17. Demonstrace Normály 18. Normál Mapa (Herzog, 2013)
 
@@ -904,7 +904,7 @@ aplikaci textury je třeba se s nimi setkat. Materiály fungují na tzv.
 Node systému.
 
 #+caption: 2019-04-13 (1)
-[[file:assets/media/image23.png]]
+[[file:]]
 
 19. Demonstrace Shader Editoru
 
@@ -1100,7 +1100,7 @@ Nejlépe demonstrováno na takovéto kouli:
 Čím bělejší, tím více světla se odráží.
 
 *** IOR (Index Lomu)
-            [[file:assets/media/image24.png]]
+[[file:]]
 
 (Cddwumich, 2011)
 
@@ -1168,7 +1168,7 @@ Motion Blur obsahoval, musíte jeho začátek nastavit na snímek 0.
 
 #+caption: A picture containing building, bus, street, road Description
 automatically generated
-[[file:assets/media/image25.jpeg]]
+[[file:]]
 
 (E01, 2008)
 
@@ -1268,7 +1268,7 @@ nedodržují, takže si to zopakujme.
 
 ** Suzanne
          #+caption: Suzanne.svg.png
-[[file:assets/media/image26.png]]
+[[file:]]
 
 (Inductiveload, 2008)
 
@@ -1522,7 +1522,7 @@ se postupuje při vytváření takového materiálu.
 | Název           | Nastavení | Náhled                     |
 |-----------------+-----------+----------------------------|
 | #+begin_quote   |           |  |
-[[file:assets/media/image27.png]]
+[[file:]]
 |
 |   Porcelán      |           |                            |
 | #+end_quote     |           |                            |
