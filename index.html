@@ -1,0 +1,3257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2021-08-01 Sun 18:25 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Blender For Mortals</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Michal Žáček" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/readtheorg/css/readtheorg.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.js"></script>
+<script type="text/javascript" src="https://www.pirilampo.org/styles/readtheorg/js/readtheorg.js"></script>
+<script type="text/javascript">
+// @license magnet:?xt=urn:btih:e95b018ef3580986a04669f1b5879592219e2a7a&dn=public-domain.txt Public Domain
+<!--/*--><![CDATA[/*><!--*/
+     function CodeHighlightOn(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.add("code-highlighted");
+         target.classList.add("code-highlighted");
+       }
+     }
+     function CodeHighlightOff(elem, id)
+     {
+       var target = document.getElementById(id);
+       if(null != target) {
+         elem.classList.remove("code-highlighted");
+         target.classList.remove("code-highlighted");
+       }
+     }
+    /*]]>*///-->
+// @license-end
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">Blender For Mortals</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgddaa13b">1. Předmluva</a>
+<ul>
+<li><a href="#orgcd23531">1.1. Informace o dokumentu - Cílová skupina, Styl a Záměr</a></li>
+<li><a href="#orgfc85bb6">1.2. Kde všude se používá</a></li>
+<li><a href="#org3dcffb9">1.3. Blender FOUNDATION &#x2013; Trocha Historie</a></li>
+<li><a href="#orgecfff6d">1.4. Blender není jen na 3D modelaci</a></li>
+<li><a href="#orgc8c5d72">1.5. Pluginy</a></li>
+</ul>
+</li>
+<li><a href="#orgf123707">2. Interface</a>
+<ul>
+<li><a href="#orga359684">2.1. 3D Zobrazení</a>
+<ul>
+<li><a href="#org522ecee">2.1.1. Módy</a></li>
+<li><a href="#org762451c">2.1.2. Kamera</a></li>
+</ul>
+</li>
+<li><a href="#org9b834f3">2.2. Vlastnosti</a>
+<ul>
+<li><a href="#org433e716">2.2.1. Render</a></li>
+<li><a href="#orge611d63">2.2.2. Výstup (Output)</a></li>
+<li><a href="#orgbf1bad6">2.2.3. Svět (World)</a></li>
+<li><a href="#orgcd4b34e">2.2.4. Object</a></li>
+<li><a href="#org5113d86">2.2.5. Materiály</a></li>
+<li><a href="#org102534d">2.2.6. Omezovače (Constraints)</a></li>
+<li><a href="#orgd903178">2.2.7. Modifikátory (Modifiers)</a></li>
+<li><a href="#orge57861c">2.2.8. Data &gt; Vertex Groups</a></li>
+</ul>
+</li>
+<li><a href="#org7b1c6c5">2.3. Hierarchie (Outliner)</a></li>
+<li><a href="#orgf98eaa9">2.4. Timeline</a></li>
+<li><a href="#orgcb52a06">2.5. Uživatelská Nastavení</a>
+<ul>
+<li><a href="#orgba7176d">2.5.1. Interface</a></li>
+<li><a href="#org61ec782">2.5.2. Add-ons</a></li>
+<li><a href="#org98e5156">2.5.3. Systém</a></li>
+</ul>
+</li>
+<li><a href="#orga4ce209">2.6. Shader Editor</a></li>
+<li><a href="#org40388fd">2.7. UV/Obrazový Editor</a></li>
+<li><a href="#org0d61af9">2.8. Grafový Editor</a></li>
+<li><a href="#orgfbf5776">2.9. Částicové systémy</a></li>
+<li><a href="#org9fb0e4d">2.10. Praktické Informace</a>
+<ul>
+<li><a href="#org8a8ea33">2.10.1. Chytré vstupy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org805ed28">3. Objekty</a>
+<ul>
+<li><a href="#orgcdbd6af">3.1. Modelování</a>
+<ul>
+<li><a href="#org0d0f2a0">3.1.1. Cesty</a></li>
+<li><a href="#orgfa691c8">3.1.2. Sculpting</a></li>
+</ul>
+</li>
+<li><a href="#orgb5ca876">3.2. Vzhled</a>
+<ul>
+<li><a href="#org11880bb">3.2.1. Složení objektu</a></li>
+</ul>
+</li>
+<li><a href="#orgdfdfd4c">3.3. Pohyb</a>
+<ul>
+<li><a href="#orgae8397c">3.3.1. Kosti &#x2013; Rigging</a></li>
+<li><a href="#org2e3c324">3.3.2. Fyzikální simulace</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org435db64">4. Scéna</a>
+<ul>
+<li><a href="#orgae2f933">4.1. Světlo</a>
+<ul>
+<li><a href="#org9f4b697">4.1.1. Typy světel</a></li>
+<li><a href="#org1f83dd1">4.1.2. Ambient Occlusion [AO]</a></li>
+<li><a href="#org8b34c45">4.1.3. Fresnel</a></li>
+<li><a href="#org93d58ff">4.1.4. IOR (Index Lomu)</a></li>
+</ul>
+</li>
+<li><a href="#orgc2311f9">4.2. Vykreslování (Rendering)</a>
+<ul>
+<li><a href="#org56d1dee">4.2.1. Nastavení</a></li>
+<li><a href="#org6819d19">4.2.2. CPU vs. GPU</a></li>
+<li><a href="#org3e572c6">4.2.3. Další možnost &#x2013; Renderfarmy</a></li>
+<li><a href="#orgb51e5e8">4.2.4. Perspektivy</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org90fc31a">5. Ostatní</a>
+<ul>
+<li>
+<ul>
+<li><a href="#orga8afbd0">5.0.1. Import a Export</a></li>
+<li><a href="#orgaf3d809">5.0.2. Jak správně předat SOUBOR tak, aby ho Každý otevřel</a></li>
+</ul>
+</li>
+<li><a href="#org9fc783b">5.1. Suzanne</a></li>
+</ul>
+</li>
+<li><a href="#orgccfa0ca">6. Ukázky / Cvičení</a>
+<ul>
+<li><a href="#org8f843b9">6.1. Vaporwave</a></li>
+<li><a href="#org808d7f4">6.2. Jednoduchá krajina z výšky</a></li>
+<li><a href="#org4c3f290">6.3. Káva a Svačina</a></li>
+<li><a href="#org0d35629">6.4. Metro</a></li>
+</ul>
+</li>
+<li><a href="#org4047bae">7. Tabulky</a>
+<ul>
+<li><a href="#org8a51da9">7.1. Slovníček Pojmů</a></li>
+<li><a href="#orga8dc163">7.2. Materiály</a></li>
+</ul>
+</li>
+<li><a href="#org23869db">8. Užitečné odkazy</a>
+<ul>
+<li><a href="#orgf41153c">8.1. Info</a></li>
+<li><a href="#orge6ce705">8.2. Zdroje</a></li>
+</ul>
+</li>
+<li><a href="#org5805ca3">9. Závěr</a></li>
+<li><a href="#orgb2fe7fa">10. Bibliografie</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgddaa13b" class="outline-2">
+<h2 id="orgddaa13b"><span class="section-number-2">1</span> Předmluva</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgcd23531" class="outline-3">
+<h3 id="orgcd23531"><span class="section-number-3">1.1</span> Informace o dokumentu - Cílová skupina, Styl a Záměr</h3>
+<div class="outline-text-3" id="text-1-1">
+<p>
+Psáno pro Blender 2.8. Tento dokument má zahrnovat základní znalosti
+potřebné k rozumné práci ve 3D grafických programech se zaměřením na
+Blender.
+</p>
+
+<p>
+Je důležité vědět, že cílem této práce je seznámit čtenáře s Blenderem
+do takové míry, aby byl schopen sám začít prozkoumávat tento rozsáhlý
+program. Mnohé části jsou přeskočeny nebo vysvětleny povrchně za účelem
+nezahltit čtenáře.
+</p>
+
+<p>
+Účelem je vysvětlit, jak funguje Blender spíše v jeho principech a s
+některými nuancemi, které mohou nováčkům dělat problém. Je mnoho lidí,
+kteří se již do modelování v Blenderu chtěli pustit, ale poté, co si
+našli na internetu nějaké tutoriály, stejně nevěděli, co dělali, protože
+jenom slepě sledovali tutoriál bez hlubšího pochopení. Pochopení
+problematiky, schopnost stavby na předešlých znalostech a zkoušení si
+sám nových věcí, je stav, který je právě záměrem této práce.
+</p>
+
+<p>
+Tato stránka je generována z org-mode souboru za pomoci tématickým souborů převzatých z <a href="https://github.com/paulzql/org-html-themes">tohoto repa</a>,
+děkuji všem kteří sdílejí na internetu úžasné věci.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfc85bb6" class="outline-3">
+<h3 id="orgfc85bb6"><span class="section-number-3">1.2</span> Kde všude se používá</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+         <i>„Používám Blender protože je silný, ne protože je zdarma”</i>, řekl Max
+Puliero v rozhovoru s CGCookie.com v roce 2017. (Karon, 2017)<sup><a id="fnr.1" class="footref" href="#fn.1">1</a></sup> Od
+té doby, především během několika posledních pár let, se Blender
+přeměnil z komerčně téměř nepoužívaného programu v extrémně výkonný kus
+softwaru, který by mohl konkurovat mnohým placeným alternativám.
+</p>
+
+<p>
+Příklady, kde Blender byl použit:
+</p>
+
+<p>
+Max Puliero uvedl, že při práci na hře Dark Souls III, používal na
+design postav Blender, přestože jeho studio standartně užívalo jiné
+programy. (Karon, 2017)<sup><a id="fnr.1.100" class="footref" href="#fn.1">1</a></sup> Ubisoft Animation Studio má v průběhu roku
+2020 adoptovat Blender jako svůj hlavní software. (Ubisoft, 2019)<sup><a id="fnr.2" class="footref" href="#fn.2">2</a></sup>
+Unity Game Engine nativně podporuje [.blend] soubory.
+</p>
+
+<p>
+Již dlouho existovaly filmy tvořené pomocí Blenderu, ale Next Gen
+(Netflix, 2018)<sup><a id="fnr.3" class="footref" href="#fn.3">3</a></sup> od Netflix je jeden z prvních komerčních filmů,
+které byly skutečně animovány čistě v Blenderu (Veldhuizen, 2018)<sup><a id="fnr.4" class="footref" href="#fn.4">4</a></sup>.
+Pokud nebereme celý film, ale stačí využití, pak ve filmu Warcraft byl
+narychlo přidán Murloc s jeho pomocí. (Failes, 2016)<sup><a id="fnr.5" class="footref" href="#fn.5">5</a></sup>
+</p>
+
+<p>
+Pokud se zajímáte spíše o vesmír, NASA vydala některé z jejích modelů
+v [.blend] formátu. Dokonce projekt Experience Curiosity nějakou dobu
+běhal na Blender Enginu, dokud nebyl zrušen.
+</p>
+
+<p>
+Takže jak sami vidíte, není toho málo.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3dcffb9" class="outline-3">
+<h3 id="org3dcffb9"><span class="section-number-3">1.3</span> Blender FOUNDATION &#x2013; Trocha Historie</h3>
+<div class="outline-text-3" id="text-1-3">
+<p>
+(Rensselaer, 1998)<sup><a id="fnr.6" class="footref" href="#fn.6">6</a></sup>
+<img src="https://www.rpi.edu/dept/acm/packages/blender/man/manual_1.02/man/man03.jpg" alt="man03.jpg" />
+</p>
+
+<p>
+(Maanders, 2008)<sup><a id="fnr.7" class="footref" href="#fn.7">7</a></sup>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Ton_Roosendaal_on_Big_Buck_Bunny_premiere_by_William_Maanders_2008.jpg" alt="Ton_Roosendaal_on_Big_Buck_Bunny_premiere_by_William_Maanders_2008.jpg" />
+</p>
+
+<p>
+NeoGeo bylo dánské animační studio, které roku 1994 začalo vytvářet
+Blender pro firemní použití. Hlavním autorem byl Ton Roosendaal &#x2013;
+tehdejší spolumajitel firmy. V roce 1995 už měli funkční verzi 1.0 a 1.
+ledna 1998 byl jejich program vydán jako freeware &#x2013; volně dostupný na
+internetu. Ještě ten samý rok byla firma NeoGeo zanikla a Roosendaal
+založil svoji vlastní firmu Not a Number Technologies (NaN), za účelem
+dále rozvíjet projekt Blender. NaN roku 2002 zkrachovala a Roosendaal
+ještě téhož roku založil neziskovou organizaci Blender Foundation.
+</p>
+
+<p>
+Blender Foundation se během následujících let pokoušel udělat Blender
+Open-Source (prozatím byl Blender pouze volně dostupný jako celý
+program, open-source znamená, že bude i volně upravitelný a bude na něm
+moct pracovat kdokoli). Roosendaal vybral svůj cíl 100 000 euro od lidí
+a dosáhl svého cíle. Dodnes je Blender vyvíjen hlavně jeho komunitou
+a čtyřmi programátory zaměstnanými u Blender Foundation.
+</p>
+
+<p>
+(Blender (software), n. d.)<sup><a id="fnr.8" class="footref" href="#fn.8">8</a></sup>
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgecfff6d" class="outline-3">
+<h3 id="orgecfff6d"><span class="section-number-3">1.4</span> Blender není jen na 3D modelaci</h3>
+<div class="outline-text-3" id="text-1-4">
+<p>
+         Ačkoli začal svůj život jako animační program, vyvíjen pro potřeby
+animace, rozsáhlá komunita mu přidala množství různých dalších funkcí.
+Dnes zvládá editovat video, zvuk, zvládá sledovat objekty na kameře a
+nedávno se objevily i fotogrammetrické pluginy. Rozšířila se také
+podpora jiných programů. Není vzácné, aby herní engine měl podporu pro
+proprietární [.blend] soubory nebo podporoval přímé napojení pomocí
+pluginů.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc8c5d72" class="outline-3">
+<h3 id="orgc8c5d72"><span class="section-number-3">1.5</span> Pluginy</h3>
+<div class="outline-text-3" id="text-1-5">
+<p>
+         Roztroušenost vývoje donutila Blender využívat tzv. pluginy. Plugin je
+funkce programu taková, že není brána jako součástí jeho jádra, ale bere
+se jako jeho rozšíření. Lze jej například i vypnout nebo stáhnout z
+internetu. Příkladem je třeba podpora dalších formátů, předpřipravené
+nové objekty a zjednodušený přístup k některým nastavením. Takových
+pluginů je obrovské množství a dají se doinstalovat do Blenderu podle
+potřeby. On sám už nějaké obsahuje, a i když jsou některé v základu
+vypnuty, není kolikrát potřeba je stahovat a lze je pouze zapnout v
+nastavení.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgf123707" class="outline-2">
+<h2 id="orgf123707"><span class="section-number-2">2</span> Interface</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+Blender se svou rozmanitou funkčností snaží poskytnout co nejvíce
+možností a do toho je musí udržet přístupné a přehledné. K tomuto
+využívá systém oken, o kterém si nyní něco můžeme říct.
+</p>
+
+<p>
+Když poprvé spustíte Blender, tak vypadá následovně.
+</p>
+
+
+<div id="org5e986f6" class="figure">
+<p><img src="assets/02-interface/UI-1.jpg" alt="UI-1.jpg" />
+</p>
+<p><span class="figure-number">Figure 1: </span>Po spuštění</p>
+</div>
+
+<p>
+Nejlépe je si přirovnat systém Blender k oknům u Vašeho počítače. Tak,
+jak máte na počítači otevřena mnohá okna vedle sebe (např.: prohlížeč,
+Word, mail atd.), stejně tak je to u Blenderu. Blender jako program má
+nespočet různých funkcí, které by byly absolutně nepochopitelné, kdyby
+byly ukázány všechny najednou. Proto jsou nástroje uvedeny do
+souvisejících oken, kdy každé z nich má sloužit k jednomu účelu -
+například okno pro umístění objektů do scény, okno pro jejich nastavení,
+okno pro editaci videa, okno pro práci s texturami atd.
+</p>
+
+
+<div id="orgfa7dc29" class="figure">
+<p><img src="assets/02-interface/UI-2.jpg" alt="UI-2.jpg" />
+</p>
+<p><span class="figure-number">Figure 2: </span>Po spuštění (obarvené)</p>
+</div>
+
+<p>
+Sledujme nyní obrázek 5. Modře je zaznačeno takzvané 3D zobrazovací
+okno, ve kterém budete pravděpodobně trávit nejvíce času. Zeleně je
+zvýrazněna Ćasová osa, která se používá hlavně při animacích. Napravo je
+červeně většina nastavení. Žlutě je Seznam objektů a skupin. Nakonec
+vršek lemuje informační panel, který obsahuje většinu ukládání, otvírání
+souborů a také se zde zobrazují procesy na pozadí jako vykreslování
+a fyzikální simulace.
+</p>
+
+<p>
+<b>Pohyb s okny</b> &#x2013; Pokud najedete myší mezi dvě okna změní se Vám kurzor
+a můžete měnit jejich velikosti. Najetím na roh okna, kde se vám kurzor
+změní na kříž, je možné okna zavřít nebo otevřít.
+</p>
+
+<p>
+Obsah okna lze změnit v malém menu obsaženém v každém z oken. Na začátku
+jsou nejlépe vidět dva v obou rozích levé strany programu. Poznají se
+podle obrázku, vedle nějž se nachází šipka dolů. Po kliknutí na toto
+menu se Vám otevře výběr všech druhů oken, které si nyní projdeme.
+</p>
+
+
+<div id="org37d72c0" class="figure">
+<p><img src="assets/02-interface/UI-WINDOWS.jpg" alt="UI-WINDOWS.jpg" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Výběr oken</p>
+</div>
+</div>
+
+<div id="outline-container-orga359684" class="outline-3">
+<h3 id="orga359684"><span class="section-number-3">2.1</span> 3D Zobrazení</h3>
+<div class="outline-text-3" id="text-2-1">
+<p>
+         Zde budou Vaše oči trávit nejvíce času. Okno 3D zobrazení Vám zobrazuje
+celou scénu. Můžete v něm nejjednodušeji přepínat mezi objekty,
+modelovat je, pohybovat a točit s nimi. Také se Vám zde promítnou
+veškeré změny z jiných oken. Dále v něm můžete nahlížet do kamer
+a vidíte v něm, jak vypadá Vaše scéna.
+</p>
+
+<p>
+K pohybu v 3D zobrazení slouží nejlépe numpad. Klávesy 4, 8, 6 a 2 otáčí
+kameru kolem aktuálního středu. Stejný pohyb je dosažitelný přidržením
+kolečka myši. 1, 7 a 3 nastaví pohled dle globálních os - přesně na
+pohled shora, ze strany nebo zepředu. 9 invertuje pohled o 180°, takže
+pohled zepředu otočí na pohled zezadu. K přiblížení a oddálení pohledu
+slouží Klávesy [+] a [-] nebo kolečko myši.
+</p>
+
+<p>
+Klávesa [Shift] změní 4 a 6 na klávesy otáčející pohled ze strany na
+stranu, jako byste nakláněli hlavu. [Ctrl] změní všechny směrové klávesy
+tak, aby posouvaly pohled ze strany na stranu, bez rotace.
+</p>
+</div>
+
+<div id="outline-container-org522ecee" class="outline-4">
+<h4 id="org522ecee"><span class="section-number-4">2.1.1</span> Módy</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<p>
+            Uvnitř tohoto okna se nalézá několik módů. Nejdůležitější z nichž jsou
+objektový a editační. Tyto dvě možnosti máme oddělené a přepínáme mezi
+nimi stisknutím klávesy [Tab]. Další módy jsou přístupné z menu v levém
+horním rohu.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org9c0e406"></a>Objektový<br />
+<div class="outline-text-5" id="text-2-1-1-1">
+<p>
+               Tento mód slouží především k pohybu objektů a jako mezikrok k dalším
+módům a oknům. V objektovém módu můžete libovolně zvolit kterýkoliv
+objekt, který poté v dalších módech a oknech budete editovat, protože
+všechny ostatní módy vždy pracují pouze s tímto jedním zvoleným
+objektem.
+</p>
+
+<p>
+Objekt zvolíte stisknutím levého tlačítka myši kdekoli na něm.
+</p>
+
+<p>
+Pokud chcete zvolit více objektů najednou, přidržte k jejich volbě
+[Shift].
+</p>
+
+
+<div id="org9911a57" class="figure">
+<p><img src="assets/02-interface/Translated-Cube.jpg" alt="Translated-Cube.jpg" />
+</p>
+<p><span class="figure-number">Figure 4: </span>Transformovaná Kostka (translace, rotace, škálování)</p>
+</div>
+
+<p>
+<b>Zvolení objektů</b> - Žlutým okrajem je zvýrazněn zvolený objekt. Ten je
+zobrazován a upravován v ostatních oknech. Oranžově jsou zvýrazněny
+další zvolené objekty, na které se také budou aplikovat translace nebo
+seskupování či další hromadné úpravy. Hlavním zvoleným objektem je vždy
+objekt, který byl do výběru přídán jako poslední. Blender referuje ke
+všem zvoleným objektům jako Selected a k hlavnímu zvolenému objektu jako
+active. Klávesou [,] zacentrujete pohled na zvolené objekty.
+</p>
+
+
+<div id="org0d8c25c" class="figure">
+<p><img src="assets/02-interface/Selected-Cube.jpg" alt="Selected-Cube.jpg" />
+</p>
+<p><span class="figure-number">Figure 5: </span>Volba objektů</p>
+</div>
+
+<p>
+<b>Pohyb</b> - Zde se rovnou hodí zmínit o klávesových zkratkách, těch má
+Blender nespočetně, ale nyní jich budeme využívat jen několik. Nebojte,
+bude to jednoduché.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<tbody>
+<tr>
+<td class="org-left">G</td>
+<td class="org-left">translace</td>
+</tr>
+
+<tr>
+<td class="org-left">R</td>
+<td class="org-left">rotace</td>
+</tr>
+
+<tr>
+<td class="org-left">S</td>
+<td class="org-left">rozměr</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Poté, co jste zvolili, co chcete s objektem dělat, můžete říct přímo
+ve kterém směru. Tím, že stisknete jednu klávesu korespondující k jedné
+z os [X, Y, Z], změna se bude projevovat pouze na té ose. Pokud
+stisknete klávesu ještě jednou, tak zvolíte lokální osu namísto
+globální. Další stisknutí osu opět odemkne.
+</p>
+
+<p>
+Jsou tři osy pohybu - podle toho, k čemu jsou tyto osy kolmé, je dělíme
+především na lokální a globální. Lokální osa zahrnuje předešlé změny.
+Například krychle zobrazena níže má lokální osu X o 45 stupňů odkloněnou
+od globální osy X. Globální jsou totiž stacionární a vždy zůstávají
+stejné, osy X a Y jsou rovnoběžné s čárami zaznačenými kolem objektů,
+osa Z je na obě kolmá.
+</p>
+
+<p>
+Pokud chcete změnu provést o specifickou hodnotu, můžete ji napsat na
+klávesnici. Všechny změny se potvrzují levým tlačítkem myši a ruší se
+pravým.
+</p>
+
+<p>
+Příklad:
+</p>
+
+<p>
+<img src="assets/02-interface/Rotary-Cube.jpg" alt="Rotary-Cube.jpg" />
+<img src="assets/02-interface/Rotary-Cube-1.jpg" alt="Rotary-Cube-1.jpg" />
+</p>
+
+<p>
+Když mám zvolený objekt, stisknu R, napíšu 45 a stisknu Z. Krychle se mi
+otočí, jak vidíte výše, o 45 stupňů dle svislé osy Z.
+</p>
+
+
+<div id="orgf755346" class="figure">
+<p><img src="assets/02-interface/Rotary-Cube-2.jpg" alt="Rotary-Cube-2.jpg" />
+</p>
+<p><span class="figure-number">Figure 6: </span>Informace o změně</p>
+</div>
+
+<p>
+Vlevo nahoře poté máme informace o současné probíhající změně, pokud ji
+chcete dodatečně měnit. Hodnotu lze dokonce standartně přepisovat
+klávesou [Backspace] a šipkami. Změna se potvrdí klávesou [Enter] nebo
+levým tlačítkem myši. Vráti lze klávesou [Esc] nebo pravým tlačítkem
+myši.
+</p>
+
+<p>
+Nové objekty lze přidávat z menu dostupného klávesovou zkratkou
+[Shift+A].
+</p>
+
+<p>
+<b>3D Kurzor</b> - Vlevo vidíte tento spínač, pokud je nastaven na spodní
+hodnotu, levé tlačítko myši namísto volení objektů, začne přemisťovat
+tzv. 3D Kurzor. Tento kurzor slouží k pár účelům. Jednak je to místo,
+kde se objevují nově přidané objekty, ale především slouží jako
+arbitrární přemístitelný bod v prostoru. Pomocí menu na zkratce
+[Shift+S] můžete přemístit 3D Kurzor na nějaké specifické místo nebo
+přemístit objekt na 3D Kurzor.
+</p>
+
+
+<div id="orgc000e41" class="figure">
+<p><img src="assets/02-interface/workspace/3DCursor.jpg" alt="3DCursor.jpg" />
+</p>
+<p><span class="figure-number">Figure 7: </span>Výběr/3D Kurzor Spínač</p>
+</div>
+
+<p>
+<b>Origin</b> &#x2013; neboli počáteční bod, vyznačen na objektech malou žlutou
+tečkou, určuje jakousi jednotnou definici pro daný objekt. Protože
+objekt je často složen i ze stovek bodů, je potřeba jeden jasný bod, ke
+kterému lze referovat - například při zapisování jeho pozice. Pokud
+nahlédnete do vlastností objektu, vidíte zde pouze souřadnice jediného
+bodu, definující pozici celého objektu - tímto bodem je právě pivotový
+bod. Všechny transformace se také provádí se středem v pivotovém bodu,
+pokud není řečeno jinak. Nejlépe se nastavuje v menu Object &gt; Set
+Origin.
+</p>
+
+<p>
+Na vrchu okna poté máte několik dalších nástrojů. Nejdříve popišme ty
+uprostřed.
+</p>
+
+<p>
+<b>Pivotovým bodem</b> - (Pivot point) se rozumí bod, vůči kterému jsou
+prováděny operace.
+</p>
+
+<p>
+<img src="assets/02-interface/workspace/pivot0.jpg" alt="pivot0.jpg" />
+<img src="assets/02-interface/workspace/pivot2.jpg" alt="pivot2.jpg" />
+<img src="assets/02-interface/workspace/pivot3.jpg" alt="pivot3.jpg" />
+</p>
+
+<p>
+Například výše byly umístěny dvě krychle, jedna nalevo a jedna napravo,
+od středu na stejnou úroveň. Obě byly otočeny o 45°, ta vlevo kolem
+Originu a ta napravo kolem 3D Kurzoru.
+</p>
+
+<p>
+<b>Snap</b> - Další je menu něčeho nazývané Snap. Nejlépe by toto bylo
+přeloženo jako záchytné body. Magnetem se zapíná a vypíná, napravo
+vybíráte na co se změny chytají. Pokud máte například zapnutý Snap na
+Face, tak kdykoli provádíte změnu, například přemisťujete objekt, a vaše
+myš narazí na jakoukoli stěnu, objekt se na ni přichytí. Většinou to
+provede tak, že jeho nejbližší bod nastaví přesně na daný záchytný bod.
+</p>
+
+
+<div id="org8a2a4cf" class="figure">
+<p><img src="assets/02-interface/workspace/Snap.jpg" alt="Snap.jpg" />
+</p>
+<p><span class="figure-number">Figure 8: </span>Snap Menu</p>
+</div>
+
+<p>
+<b>Proporční editace</b> - Při standartní editaci jsou ovlivněny pouze
+zvolené části (první obrázek níže), ale to často není co potřebujete.
+Proporční editace je vcelku jasná z názvu - ovlivňuje i nezvolené části
+meshe, silou odvíjející se dle jejich vzdálenosti od zvolených částí
+meshe. Pro zvětšení nebo zmenšení ovlivněné části točíte kolečkem myši.
+„Connected only” bude ovlivňovat pouze části meshe, které jsou direktně
+spojené se zvolenými částmi. „Projected from view” určuje střed, od
+kterého se počítá vzdálenost, a následně tedy i síla změny pro daný bod.
+Pokud je vypnutý, změny se odvíjí od standartního středu definovaného
+pivotovým bodem. Pokud je zapnutý, střed je nejlépe popsán jako
+polopřímka začínající z místa vašeho pohledu a procházející pivotovým
+bodem.
+</p>
+
+<p>
+<img src="assets/02-interface/workspace/Proportional0.jpg" alt="Proportional0.jpg" />
+<img src="assets/02-interface/workspace/Proportional1.jpg" alt="Proportional1.jpg" />
+<img src="assets/02-interface/workspace/Proportional2.jpg" alt="Proportional2.jpg" />
+<img src="assets/02-interface/workspace/Proportional3.jpg" alt="Proportional3.jpg" />
+</p>
+
+<p>
+<b>/</b> - Lomítkem schováte všechny nezvolené objekty. Opětovným stisknutím
+je pak zase zobrazíte.
+</p>
+</div>
+</li>
+
+<li><a id="orgbca411e"></a>Editační<br />
+<div class="outline-text-5" id="text-2-1-1-2">
+<p>
+               Zde - namísto editování celé scény, máte možnost zvlášť upravovat
+zvolený objekt včetně meshe. Zde můžete nastavovat i související věci
+jako [Vertex Group] nebo [Material], každé jednotlivé strany.
+</p>
+
+
+<div id="org482049a" class="figure">
+<p><img src="assets/02-interface/workspace/Selector.jpg" alt="Selector.jpg" />
+</p>
+<p><span class="figure-number">Figure 9: </span>Selector</p>
+</div>
+
+<p>
+V tomto menu si vybíráte, zda volíte roh, hranu nebo stěnu. Zatím nechme
+toto nastavené na stěny a ukažme si úkony, které lze dělat. Tyto jsou
+nejlépe ilustrované na stěnách, ale všechny platí také pro hrany a rohy.
+</p>
+
+<p>
+<img src="assets/02-interface/workspace/Selection.jpg" alt="Selection.jpg" />
+<img src="assets/02-interface/workspace/CTRL.jpg" alt="CTRL.jpg" />
+</p>
+
+<p>
+Volí se stejně jako u objektů - levým tlačítkem myši a přidržením
+[Shift] na zvolení více najednou. Rozdíl je, že hlavní zvolená stěna je
+zabarvena stejně jako ostatní, pouze je opatřena bílým obtažením.
+</p>
+
+<p>
+Máme zde navíc možnost zvolit „nejkratší” cestu mezi dvěma body. Zvolíme
+počáteční a poté se stisknutým [Ctrl] zvolíme konečný bod.
+</p>
+
+<p>
+Kombinace [Alt + Shift] se pokusí nalézt jakousi cykličnost ve Vašem
+objektu a zvolit ji. Například pokud máte válec a stisknete na hranu
+jeho horní stěny, zvolí se celý okraj kolem dokola. Na obrázku 15 jsou
+tyto volby žlutě.
+</p>
+
+<p>
+Co se týká translace, rotace atd. vše je stejné jako u celých objektů.
+Fungují zde stejné zkratky a principy.
+</p>
+
+<p>
+<img src="assets/02-interface/workspace/I.jpg" alt="I.jpg" />
+<img src="assets/02-interface/workspace/Extrude.jpg" alt="Extrude.jpg" />
+<img src="assets/02-interface/workspace/Intrude.jpg" alt="Intrude.jpg" />
+</p>
+
+<p>
+Dva úkony, které slouží jako základ pro pokročilejší editaci, jsou Inset
+a Extrude. Nalezneme je na klávesách [I] a [E]. Inset vesměs utvoří
+novou stěnu napojenou stranami na tu původní a nechá Vás ji škálovat. Po
+stisku klávesy [I] a posunutí myši, Vám zůstane kostka z obrázku výše
+nalevo. Extrude udělá stejné napojení, ale posléze je nová stěna
+posunována, ne škálována. Tyto dvě operace lze aplikovat i na více stěn
+najednou. Pokud jsou to stěny sousedící, akce bude provedena jako by se
+jednalo pouze o jednu stěnu.
+</p>
+
+<p>
+[Shift + A] funguje i v edit módu a přidá nový mesh do stejného objektu.
+Může se to zdát jako přidání nového objektu, ale všechny tyto části
+zastřešeny pod jedním objektem mají jediný Origin a sdílí mezi sebou
+všechny Omezovače a Modifikátory. Pro zvolení celé jedné spojené meshe
+je dobrá klávesová zkratka [Ctrl + L].
+</p>
+
+<p>
+<b>Loop Cut</b> - Zkratkou [Ctrl+R] můžete provézt takovýto řez. Myší
+zvolíte, kde se má provést a napsáním čísla zvolíte na kolik částí
+takovýto řez rozdělí objekt. Výše bylo užito rozdělení na pět částí.
+</p>
+
+
+<div id="org43e2b20" class="figure">
+<p><img src="assets/02-interface/workspace/Loop-Cut.jpg" alt="Loop-Cut.jpg" />
+</p>
+<p><span class="figure-number">Figure 10: </span>Loop Cut</p>
+</div>
+
+<p>
+<b>Oddělování a Slučování</b> &#x2013; Stisknutím klávesy [P] se Vám otevře menu,
+ve kterém si můžete vybrat, dle čeho oddělíte část Vašeho současného
+objektu do objektu nového.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org762451c" class="outline-4">
+<h4 id="org762451c"><span class="section-number-4">2.1.2</span> Kamera</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+<div id="org029f8d0" class="figure">
+<p><img src="assets/02-interface/workspace/Camera.jpg" alt="Camera.jpg" />
+</p>
+<p><span class="figure-number">Figure 11: </span>Kamera</p>
+</div>
+
+<p>
+Stejné jako v realitě na scéně musí být kamera, která zaznamenává světlo
+odrážející se od scenérie. Pro vykreslování budeme většinou v Blenderu
+používat něco podobného. Pokud děláme cokoliv složitější než jeden
+model, který si otáčíme uprostřed obrazovky, je potřeba počítači říct,
+jak má scénu zobrazovat. Kamer může být více a každá obsahuje spoustu
+informací - například ohledně její pozice, rotace, perspektivy,
+objektivu a mnohé další.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org7e3a31c"></a>Kamerový pohled<br />
+<div class="outline-text-5" id="text-2-1-2-1">
+<p>
+V [Okno 3D zobrazení] můžeme vidět buď volně nebo pohledem kamery
+</p>
+
+<p>
+Scéna má většinou nastavenou jednu kameru jakožto výchozí. Při stisku
+[Klávesy 0] je náš pohled nastaven na ten skrze výchozí kameru.
+</p>
+
+<p>
+[Ctrl+Alt+0] nastaví kameru na Váš aktuální pohled.
+</p>
+</div>
+</li>
+
+<li><a id="orgf18e63d"></a>důležitá nastavení<br />
+<div class="outline-text-5" id="text-2-1-2-2">
+<p>
+<b><b>*</b></b> Lens
+   Pod nastavením čočkou máte čtyři důležité možnosti:
+</p>
+
+<ol class="org-ol">
+<li>Typ: Perspektivní nebo Ortografická (viz. Perspektivy str.48)</li>
+<li>Focal Length: V podstatě optické přiblížení - zoom</li>
+<li>Shift: Toto se týká fotografického efektu zvaného Tilt-shift. Je moc
+náročné to zde vysvětlit, ale jsou na něj mnohé jiné zdroje.</li>
+<li>Clip: Říká kameře jaké rozpětí vzdáleností má zobrazit. Pokud je
+start nastaven na 10m a konec na 20m, kamera neuvidí nic blíže než
+10m a vzdálenější než 20m. Pokud objekt leží přesně na hranici,
+zobrazí se pouze jeho část.</li>
+</ol>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgaa9153a"></a>Viewport Display<br />
+<div class="outline-text-6" id="text-2-1-2-2-1">
+<p>
+                  Pro výsledek irelevantní, ale při práci velmi užitečný. Kamera je dosti
+komplexní záležitost a bylo by kontraproduktivní mít stále zobrazeny
+všechny informace o ní. Tady si vybíráme přesně ty, které chceme vidět
+v [Okno 3D zobrazení].
+</p>
+
+<ol class="org-ol">
+<li>Size: velikost ikony kamery</li>
+<li>Limits: zobrazuje odkud kam je nastaven [Clip]</li>
+<li>Name: pro účel přehlednosti větších kamerových sestav si můžeme vždy
+nechat zobrazit jméno kamery, jejíž pohled máme zobrazen</li>
+</ol>
+
+<p>
+Toto nastavení má většina objektů. Má rozdílné parametry dle příslušného
+objektu, ale stejný účel.
+</p>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org9b834f3" class="outline-3">
+<h3 id="org9b834f3"><span class="section-number-3">2.2</span> Vlastnosti</h3>
+<div class="outline-text-3" id="text-2-2">
+<p>
+         Zobrazuje veškerá nastavení pro zvolený objekt a scénu. Například jeho
+lokace, užité materiály, fyziku atd. Pozor zobrazuje pouze hlavní
+zvolený objekt, nijak zde neovlivňuji sekundárně zvolené objekty
+(označeny oranžově).
+</p>
+</div>
+
+<div id="outline-container-org433e716" class="outline-4">
+<h4 id="org433e716"><span class="section-number-4">2.2.1</span> Render</h4>
+<div class="outline-text-4" id="text-2-2-1">
+<p>
+Popsáno v kapitole Render str. 45.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge611d63" class="outline-4">
+<h4 id="orge611d63"><span class="section-number-4">2.2.2</span> Výstup (Output)</h4>
+<div class="outline-text-4" id="text-2-2-2">
+<p>
+            <b>Dimenze</b> - (Dimensions) Resolution samozřejmě udává velikost výstupního
+obrazu. Hodí se zde poukázat na procentuální slider, neboť ve většině
+velkých projektů nebudete chtít vykreslovat v plné kvalitě hned od
+začátku, protože je to plýtvání časem - pokud potřebujete pouze rámcově
+zkontrolovat výstup.
+</p>
+
+<p>
+<b>Aspect</b> - mění skutečnou šířku nebo výšku pixelů - pokud nemáte jasný
+záměr, nechte zde 1:1.
+</p>
+
+<p>
+<b>Render Region</b> - Vám umožní renderovat pouze část obrazu. Toto nejlépe
+zvolíte v pohledu kamery zkratkou [Ctrl + B] a přetažením myší přes
+čtvercový region, který chcete renderovat.
+</p>
+
+<p>
+<b>Frame Start a End</b> - indikuje, od kterého do kterého časového bodu bude
+Blender renderovat. Můžete zde nastavit, abyste přeskakovali snímky.
+</p>
+
+<p>
+Ke <b>Frame Ratu</b> je třeba podotknout, že mění celkovou rychlost animace.
+Může tím pádem velmi změnit konečný vzhled animace, obzvláště
+v případech fyzikálních simulací.
+</p>
+
+<p>
+<b>Výstup</b> - (Output), zde se volí, kam a v jakém formátu chcete, aby byl
+výstup zapsán. Vesměs můžete vše nechat tak jak je, kromě File formátu.
+</p>
+
+<p>
+Pokud vykreslujete pouze snímek, na výběr máte standartní [.png],
+[.jpg], etc. Však pokud vykreslujete animaci, tak se spíše dává ve formě
+[.PNG], protože standartní video formáty mají problémy s přerušováním
+a úpravami uprostřed. Zkrátka pokud byste našli uprostřed nějakou chybu,
+museli byste začít Render od začátku. Pokud je Vaším formátem [.PNG],
+již vykreslené snímky Vám zůstanou a můžete poté pouze překreslit ty
+potřebné. Stačí najít kterou část je třeba překreslit a nechat
+renderovat jenom danou část. Jednoduché animace si pro pohodlí je
+samozřejmě možné vykreslovat do videa, ale udělat ze snímků video není
+těžké a je to možné udělat i v Blender oknu Video Sequencing.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgbf1bad6" class="outline-4">
+<h4 id="orgbf1bad6"><span class="section-number-4">2.2.3</span> Svět (World)</h4>
+<div class="outline-text-4" id="text-2-2-3">
+<p>
+            Navzdory prvotním pozorováním si všimneme, že není pozadí Vaší scény jen
+prázdný kanvas. Má materiál jako každý jiný objekt, využívá se převážně
+jako pozadí scény a pro osvětlení.
+</p>
+
+
+<div id="orgb1cf631" class="figure">
+<p><img src="assets/02-interface/World.jpg" alt="World.jpg" />
+</p>
+<p><span class="figure-number">Figure 12: </span>Svět</p>
+</div>
+
+<p>
+Nastavit tento materiál lze pod Shader Editor &gt; World.
+</p>
+
+<p>
+Z mé osobní zkušenosti nedoporučuji u komplexnějších scén používat
+k osvětlení pouze Svět, protože toto světlo vypadá velmi uměle, neboť
+působí ze všech směrů identicky, což nevypadá dobře.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcd4b34e" class="outline-4">
+<h4 id="orgcd4b34e"><span class="section-number-4">2.2.4</span> Object</h4>
+<div class="outline-text-4" id="text-2-2-4">
+<p>
+            Zde se nachází standartní data pro objekt - umístění rotace, velikost
+atd. Pokud chcete jednu osu uzamknout, aby se v ní s objektem nedalo
+manipulovat, učiníte tak stisknutím zámku vedle příslušné hodnoty.
+</p>
+
+<p>
+Následuje velké množství různých nastavení, která jsou důležitá, ale
+výrazně jednodušeji a přehledněji přístupná z jiných míst. Později se
+sem můžete vrátit. Pokud Vám tato zobrazení vyhovují více, můžete je
+také použít.
+</p>
+
+<p>
+Krom Viewport Display, kde volím, které informace o daném objektu se mi
+zobrazují ve [3D Viewport].
+</p>
+</div>
+</div>
+
+<div id="outline-container-org5113d86" class="outline-4">
+<h4 id="org5113d86"><span class="section-number-4">2.2.5</span> Materiály</h4>
+<div class="outline-text-4" id="text-2-2-5">
+<p>
+Popsáno v kapitole Materiály na straně 37.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org102534d" class="outline-4">
+<h4 id="org102534d"><span class="section-number-4">2.2.6</span> Omezovače (Constraints)</h4>
+<div class="outline-text-4" id="text-2-2-6">
+<p>
+Omezovače jsou definovaný vztah mezi dvěma objekty.
+</p>
+
+<p>
+<img src="assets/02-interface/constraints/limit-1.jpg" alt="limit-1.jpg" />
+<img src="assets/02-interface/constraints/limit-2.jpg" alt="limit-2.jpg" />
+<img src="assets/02-interface/constraints/limit-3.jpg" alt="limit-3.jpg" />
+</p>
+
+<p>
+Tyto vztahy sahají od kopírování rotace a pohybu po limitaci vzdálenosti
+mezi dvěma objekty. Aplikují se na objekt, se kterým se nehýbe &#x2013; ten,
+který má být omezovačem upraven. Výše byl aplikován omezovač „Limit
+Distance” na sféroid a s cílem na krychli. Nyní pohyb krychle zdánlivě
+pohne sféroidem, pokud je dostatečně vzdálená. Zdánlivě, protože jeho
+origin se nezmění, vypadá, že se pohnul, avšak pokud se podíváte do jeho
+vlastností, zjistíte, že jeho souřadnice se nezměnily.
+</p>
+
+<p>
+Často používaný omezovač je „Follow Path”, kdy definujete objektu cestu
+a čas, a on se po ní bude v daném čase pohybovat.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgd903178" class="outline-4">
+<h4 id="orgd903178"><span class="section-number-4">2.2.7</span> Modifikátory (Modifiers)</h4>
+<div class="outline-text-4" id="text-2-2-7">
+<p>
+            Modifikátory jsou procedurální efekty aplikované většinou na Mesh daného
+objektu. Jako příklady lze uvést nakopírování objektu za sebe, odečtení
+jednoho objektu od druhého, zarovnání rohů nebo zvýšení a snížení
+množství [Tri]. Celý smysl spočívá v tom, že tyto změny nejsou hned
+aplikovány, ale setrvávají na objektu. Takže pokud změním mesh,
+modifikátor se okamžitě přizpůsobí - dokud nestisknu Aplikovat, což
+natrvalo změní mesh a smaže Modifikátor. Modifikátorů mohu mít více
+najednou. Aplikují se vždy od vrchního tak, že každý následující pracuje
+již s meshem upraveným modifikátory předchozími.
+</p>
+
+<p>
+<img src="assets/02-interface/modifiers/Modifiers-1.jpg" alt="Modifiers-1.jpg" />
+<img src="assets/02-interface/modifiers/Modifiers-SSM.jpg" alt="Modifiers-SSM.jpg" />
+</p>
+
+<p>
+Nalevo je jednoduchá ukázka „Subsurface Modifier”, který se pokouší
+vyhlazovat meshe. Jako nafouknout uvnitř nich balónek a použít tento
+nový tvar jako tvar objektu. Napravo je pak kombinace „multiresolution”,
+který zvýší jednoduché ploše množství stěn, aby poté „displace” mohl
+aplikovat z textury vzor.
+</p>
+
+<p>
+Nad nastavením každého modifikátoru, vedle jména, je nastavení zobrazení
+a dvě šipky, které vám umožňují posouvat jej nahoru nebo dolu v pořadí
+aplikování. Toto je důležité, protože například na obrázku výše napravo,
+pokud bych aplikoval nejdříve Displace, tak by se aplikoval na
+jednoduchý plain o čtyřech vertexech, což by akorát jeden z nich
+pozvedlo a Multiresolution by poté nebyl moc platný, protože by stejně
+zůstala placatá Plane.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge57861c" class="outline-4">
+<h4 id="orge57861c"><span class="section-number-4">2.2.8</span> Data &gt; Vertex Groups</h4>
+<div class="outline-text-4" id="text-2-2-8">
+<p>
+            Pokud potřebuji označit určitou část objektu &#x2013; například, aby měla
+nějaké specifické vlastnosti, používají se k tomu Vertexové skupiny.
+Všechny funkce od simulace vlasů, až po částice pro znehybnění částí
+objektů, se ptají, na kterou skupinu se mají aplikovat. Tyto nastavení
+se poznají dle ikony: .
+</p>
+
+
+<div id="org38297ad" class="figure">
+<p><img src="assets/02-interface/vertex-group.jpg" alt="vertex-group.jpg" />
+</p>
+<p><span class="figure-number">Figure 13: </span>Vertexové skupiny</p>
+</div>
+
+<p>
+Skupiny se tvoří a mažou zde ve „Vertex Groups” - plusem a mínusem. Když
+máte zvolenou skupinu a vertexy na Vašem objektu, tlačítky Assign a
+Remove je připisujete a mažete z dané skupiny. Select a Deselect přičte
+nebo odečte vertexy z dané skupiny k Vašim právě zvoleným vertexům.
+</p>
+
+<p>
+Výše vidíte látku, kde tři z jejíž rohů byly přidány do skupiny, která
+poté byla nastavena jako nepohyblivý záchytný bod látkové simulace.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7b1c6c5" class="outline-3">
+<h3 id="org7b1c6c5"><span class="section-number-3">2.3</span> Hierarchie (Outliner)</h3>
+<div class="outline-text-3" id="text-2-3">
+<p>
+         Zde se Vám vypisuje seznam všech objektů na scéně. Všechny tyto objekty
+mají hierarchii. Mají nadřízený objekt a můžou mít podřízené objekty.
+Seznam podřízených objektů je vždy pod svým nadřízeným objektem (tzv.
+parent objekt) odsazen doprava. Hierarchie se nastavuje přetažením
+objektu, který si přejete přiřadit na objekt, který se má stát
+nadřízeným. Pokud nedržíte žádnou klávesu, můžete tímto přesouvat
+objekty pouze z kolekce do kolekce. Při držení klávesy [Ctrl] se vytvoří
+nový odkaz (tzv. link). Na ten samý objekt v dané kolekci a za držení
+klávesy [Shift] se nastaví daný objekt jako nadřízený.
+</p>
+
+<p>
+Každý podřízený objekt je nějak ovlivněn svým rodičem (tzv. parentem).
+Pokud s parentem pohnu, pohne se mi také objekt podřízený. Pokud vypnu
+jeho zobrazení, všechny podřízené objekty také přestanou být viditelné.
+</p>
+
+<p>
+Toto se používá hlavně pro zjednodušení práce. Například mám velmi
+složité auto skládající se z mnoha součástek, pro které tak mohu
+nastavit v hierarchii jednu část jako nadřízenou. Když ji zvolím,
+pohybuji celým autem a není potřeba vždy pohybovat každou součástkou
+zvlášť.
+</p>
+
+<p>
+Jak nyní vidíte nejvýše v hierarchii máte [Kolekci]. Tyto jsou vyznačeny:
+</p>
+
+
+<div id="org7ebc7f6" class="figure">
+<p><img src="assets/02-interface/icon_collection.jpg" alt="icon_collection.jpg" />
+</p>
+</div>
+
+<p>
+[Kolekce] slouží k uspořádání a napomáhají
+k přehlednosti. Zatržítko vedle kolekce zobrazí nebo schová všechny
+obsažené objekty. Objekt je viditelný, pokud existuje jeho Link alespoň
+v jedné zobrazené kolekci. U kolekcí je na pravém tlačítku myši, kromě
+možnosti přidat novou kolekci, také množství úprav známé z objektů, ale
+zde se dají aplikovat na každý objekt v kolekci naráz. V neposlední řadě
+je tu tlačítko „Instance to Scene”, které vytvoří novou [Instanci] této
+kolekce a přidá jí do scény.
+</p>
+
+<p>
+<b>Instance kolekce</b> &#x2013; se značí
+<img src="assets/02-interface/icon_collection-instance.jpg" alt="icon_collection-instance.jpg" />
+a
+je jakýmsi odrazem původní kolekce. [Instance] je neupravitelná, ale
+budou se v ní projevovat změny z původní kolekce. Toto se nejvíce hodí
+například pokud pracujete ve skupině a importujete jinou [Kolekci]
+z externího souboru.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf98eaa9" class="outline-3">
+<h3 id="orgf98eaa9"><span class="section-number-3">2.4</span> Timeline</h3>
+<div class="outline-text-3" id="text-2-4">
+<p>
+         Pokud budete animovat nebo pracovat s časem. Toto okno zobrazuje časovou
+linku veškerých pohybů a změn, které nastanou za dobu trvání vaší
+animace.
+</p>
+
+<p>
+Rozebráno v Kapitole Key-Framing na straně 39.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgcb52a06" class="outline-3">
+<h3 id="orgcb52a06"><span class="section-number-3">2.5</span> Uživatelská Nastavení</h3>
+<div class="outline-text-3" id="text-2-5">
+<p>
+         Zde se nalézá obrovské množství možností, ale většina z nich nás
+nezajímá. S nejvyšší pravděpodobností budete chodit do následujících tří
+míst.
+</p>
+</div>
+
+<div id="outline-container-orgba7176d" class="outline-4">
+<h4 id="orgba7176d"><span class="section-number-4">2.5.1</span> Interface</h4>
+<div class="outline-text-4" id="text-2-5-1">
+<p>
+Zvětšení, zmenšení textu a nastavení zobrazení. Většina je vcelku jasná.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org61ec782" class="outline-4">
+<h4 id="org61ec782"><span class="section-number-4">2.5.2</span> Add-ons</h4>
+<div class="outline-text-4" id="text-2-5-2">
+<p>
+            Kdyby Blender měl při prvním otevření obsahovat veškeré funkce, nebylo
+by v něm k vyznání, a tak je potřeba většinu mít vypnutou. Zde můžeme
+zapínat a vypínat užitečné funkce, jak vestavěné, tak stažené z
+internetu.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org98e5156" class="outline-4">
+<h4 id="org98e5156"><span class="section-number-4">2.5.3</span> Systém</h4>
+<div class="outline-text-4" id="text-2-5-3">
+<p>
+            Pokud máte v počítači grafickou kartu od Nvidia nebo AMD musíte přepnout
+Cycles Render Devices do CUDA nebo OpenCL respektive. Pokud kdykoli
+budete používat Cycles render viz. Render Engines a nebudete toto mít
+správně nastaveno, Blender Vaši kartu nevyužije, což může být pomalejší
+ve stovkách procent.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orga4ce209" class="outline-3">
+<h3 id="orga4ce209"><span class="section-number-3">2.6</span> Shader Editor</h3>
+<div class="outline-text-3" id="text-2-6">
+<p>
+Domov pro veškeré materiály.
+</p>
+
+<p>
+Toto je rozebráno v kapitole Materiály na straně 37.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org40388fd" class="outline-3">
+<h3 id="org40388fd"><span class="section-number-3">2.7</span> UV/Obrazový Editor</h3>
+<div class="outline-text-3" id="text-2-7">
+<p>
+Místo pro textury.
+</p>
+
+<p>
+Toto je rozebráno v kapitole Mapy a UV Unwrap na straně 34.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org0d61af9" class="outline-3">
+<h3 id="org0d61af9"><span class="section-number-3">2.8</span> Grafový Editor</h3>
+<div class="outline-text-3" id="text-2-8">
+<p>
+         Každá informace označena jako animovatelná (Animovatelná nastavení
+str. 31) nebo která má nastaven alespoň jeden Keyframe, bude mít své
+hodnoty zakresleny zde. Můžeme zde pozorovat jakoukoli z těchto hodnot
+v grafu za čas nebo naopak na ně nějaký graf aplikovat.
+</p>
+
+<p>
+Pro příklad můžu nastavit, aby Z souřadnice této krychle vykreslovaly
+Sinusoidu. Nejdříve přidám krychli keyframe pohybu, takže se mi v levé
+části zobrazí její pozice jako 3 grafy. Tedy jeden pro X, Y a Z. Když
+nějaký z grafů zvolím, tak se označí a zobrazí ve střední části. Je to
+standartní graf. Čára reprezentuje hodnotu proměnné v daném čase. Vlevo
+vpravo je čas, nahoru dolů je hodnota a žluté tečky jsou [Keyframe].
+V základu jsou [Keyframe] zakulacené a plynulé, tato plynulost se
+nastavuje dvěma čárami na každé straně všech [Keyframe]. Zde je
+nejjednodušší si s nimi trochu pohrát, aby člověk pochopil, jaký efekt
+mají.
+</p>
+
+<p>
+Po pravé straně máme menu, které obsahuje nejzajímavější část tohoto
+okna. Pod Modifiers máte možnost namísto [Keyframe] použít funkce. Na
+výběr jsou sinusoidy a šumy všeho druhu.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfbf5776" class="outline-3">
+<h3 id="orgfbf5776"><span class="section-number-3">2.9</span> Částicové systémy</h3>
+<div class="outline-text-3" id="text-2-9">
+<p>
+         Částicové systémy spočívají v náhodném rozmístění objektů v nějaké
+oblasti. Částicových systémů máme dva druhy „Částicové” a „Vlasové”, dle
+toho, jestli výsledný objekt zůstává součástí původního objektu, který
+ho emitoval (Vytvořil). Je to tak důležité rozdělení, že ve chvíli, kdy
+vytvoříte nový systém, prvním nastavením určíte, který typ tento systém
+je. Oba jsou velice složité, proto zde zevrubně bude popsán pouze systém
+vlasů.
+</p>
+
+<p>
+Pokud máte slabší počítač, nyní najděte nastavení ViewPort Display &gt;
+Amount. Procento zde určuje, kolik procent vlasů se bude zobrazovat
+v okně 3D Zobrazení. Jelikož jsou tyto systémy vysoce výpočetně náročné,
+pokud jdete s množstvím nad nízké stovky, měli byste zde mít výrazně
+méně než 100.
+</p>
+
+<p>
+Zpět nahoru, <b>Emission</b> - Number určuje množství vlasů, Length určuje
+jejich délku - pokud se jedná o Cestu a jejich velikost jestliže se
+jedná o objekty. Segmenty určují z kolika bodů je složena cesta. Ty jsou
+samozřejmě vyhlazovány, ale je to určitá maximální komplexnost tvaru
+cesty.
+</p>
+
+<p>
+<b>Render</b> &#x2013; Render As určí, zda vlas je Cesta, Objekt nebo objekty z
+Kolekce. Ano, vlasem může být jakýkoliv objekt, který se na scéně
+nachází. Toto se hodí například pokud máte kolekci stromů a louku a
+potřebujete je náhodně po louce rozmístit. Pokud si zvolíte objekt nebo
+kolekci pod Render, objeví se Vám další menu, které umožní vybrat danou
+Kolekci nebo Objekt, a nastavit, jak se vybírá z kolekce, jestli náhodně
+nebo cyklením a jestli se má brát v potaz transformace objektu.
+</p>
+
+<p>
+<b>Particle Edit (Mód)</b> &#x2013; Pokud máte na objektu částicový systém, objeví
+se Vám při jeho zvolení v 3D Viewportu nový mód. Tímto je Particle Edit
+mírně podobný Sculptingu se svými „Hřebeny”, ale tím podobnost končí.
+V Particle Edit můžete vesměs učesat svůj částicový systém do
+libovolného tvaru. <b>Důležité</b> - jakákoliv změna v tomto módu Vám
+znemožní dělat změny v nastavení Systému. Pokud chcete udělat úpravu
+v jeho nastavení, musíte na jeho vrcholu stisknout tlačítko Zahodit
+změny.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org9fb0e4d" class="outline-3">
+<h3 id="org9fb0e4d"><span class="section-number-3">2.10</span> Praktické Informace</h3>
+<div class="outline-text-3" id="text-2-10">
+<p>
+         <b>*</b> Animovatelná nastavení
+            Vedle překvapivého množství nastavení v Blenderu uvidíte malou bílou
+tečku. Stejně tak, jako se mohou při animaci pohybovat objekty a kamery,
+můžeme měnit kterékoliv z těchto nastavení. Pokud stiskneme toto
+tlačítko, zapneme tím animovatelnost příslušného nastavení a tím je nyní
+tečka nahrazena kosočtvercem. Pokud má v daném čase (viz. Timeline
+str.27) nastavení zatržítko v tomto kosočtverci, znamená to, že pro
+tento čas je nastaven keyframe (viz. Key-Framing str.39).
+</p>
+
+
+<div id="org235da79" class="figure">
+<p><img src="assets/02-interface/animated-setting.jpg" alt="animated-setting.jpg" />
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8a8ea33" class="outline-4">
+<h4 id="org8a8ea33"><span class="section-number-4">2.10.1</span> Chytré vstupy</h4>
+<div class="outline-text-4" id="text-2-10-1">
+<p>
+            Kdykoliv v Blenderu vepisujete čísla, ať už při transformaci nebo u
+nastavení, je velmi pohodlné využít vestavěnou kalkulačku. Kdekoliv
+můžete zadávat desetinná čísla, odčítat, sčítat, násobit i dělit.
+</p>
+
+<p>
+<img src="assets/02-interface/int-input-1.jpg" alt="int-input-1.jpg" />
+&gt;&gt;
+<img src="assets/02-interface/int-input-2.jpg" alt="int-input-2.jpg" />
+</p>
+
+<p>
+<img src="assets/02-interface/int-input-3.jpg" alt="int-input-3.jpg" />
+&gt;&gt;
+<img src="assets/02-interface/int-input-4.jpg" alt="int-input-4.jpg" />
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org805ed28" class="outline-2">
+<h2 id="org805ed28"><span class="section-number-2">3</span> Objekty</h2>
+<div class="outline-text-2" id="text-3">
+</div>
+<div id="outline-container-orgcdbd6af" class="outline-3">
+<h3 id="orgcdbd6af"><span class="section-number-3">3.1</span> Modelování</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+         <b>*</b> Polygony
+            Je název pro způsob, jakým je valná většina objektů zapisována. Blender
+drží informaci o bodech a jejich spojích v prostoru. Body spojené tak,
+že mezi nimi vzniká stěna, se nazývají polygony. Blender tvoří tyto
+polygony vždy ze skupin právě tří spojených bodů. I krychle dodržuje
+toto pravidlo:
+</p>
+
+
+<div id="org81505e2" class="figure">
+<p><img src="assets/03-objects/tri.jpg" alt="tri.jpg" />
+</p>
+</div>
+
+<p>
+Má 8 bodů a každá strana je tvořena dvěma trojúhelníky. Ty se často
+přezdívají Tri [traj] (Tris [trajs] v množném čísle).
+</p>
+
+<p>
+Blender toho mnohé skrývá a pro zjednodušení ukazuje strany klidně jako
+čtyř i více stěnné. Taková strana se nazývá Face [fejs]. Pod kapotou
+stejně ale funguje vždy za pomocí [Tri]. Toto může stěžovat některé
+úkony - jako například pokud chcete zvýraznit pouze to, co by normální
+člověk bral jako kostru této kostky. Standartní WireFrame nodou
+v materiálu je kostra kostky zvýrazněna právě tak, jako je na obrázku
+výše.
+<img src="assets/03-objects/3D_View.jpg" alt="3D_View.jpg" />
+Tímto přepínáte styl zobrazení. Zleva je to
+Wireframe, kdy vidíte konstrukci jakoby drátěnou. Solid, což je klasický
+pohled, který již znáte. LookDev je odlehčený Render. Zobrazuje téměř
+stejně jako vykreslený obraz, ale používá zjednodušené osvětlení. Slouží
+spíše pro složité scény, které není praktické vykreslovat hned kvůli
+náročnosti nebo pokud váš projekt vyžaduje využití Cycles. Posledním je
+pak Rendered, neboli vykreslený styl, který zobrazuje scénu téměř jako
+vykreslenou.
+</p>
+</div>
+
+<div id="outline-container-org0d0f2a0" class="outline-4">
+<h4 id="org0d0f2a0"><span class="section-number-4">3.1.1</span> Cesty</h4>
+<div class="outline-text-4" id="text-3-1-1">
+<p>
+            Cesta je zvláštní typ objektu. Skládá se z několika mála bodů, mezi
+kterými vede vyhlazená čára, nemá tedy ostré hrany. U cesty typu Bezier,
+každým bodem prochází navíc úsečka definována dvěma dalšími body.
+Středový bod udává kudy cesta vede a přímky definují, jak má být Cesta
+vyhlazena.
+</p>
+
+<p>
+Cesty se samy o sobě nezobrazují ve výsledném Renderu, ale mohou na ně
+být aplikovány různé věci. Jako například Bevel Modifikátor nebo naopak
+je na ně Modifikátorama a Omezovačema možné cílit. Například follow
+Path, který povede za nějakou dobu objekt po cestě.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgfa691c8" class="outline-4">
+<h4 id="orgfa691c8"><span class="section-number-4">3.1.2</span> Sculpting</h4>
+<div class="outline-text-4" id="text-3-1-2">
+<p>
+            Sculpting neboli „sochařství” je alternativní způsob vytváření modelů.
+Tento způsob je méně přesný, ale běžně se používá pro vytváření postav
+nebo jakékoli aplikace, kde se pokoušíme dosáhnout jakési přírodnosti.
+</p>
+
+<p>
+Sculpting také pouze upravuje mesh, takže je potřeba mít dostatečně
+kvalitní mesh (doporučuji pro toto Modifikátor multiresolution nastaven
+na Simple a po stisknutí tlačítka Subdivide se Vám zdvojnásobí počet
+stěn. Pokud máte problém s výkonem můžete snížit preview a nezobrazovat
+si jej v plné kvalitě až do renderu). Podobně, jako jsme probírali
+proporční editaci, je Sculpting vesměs podobný. Představme si ho jako
+pokročilou proporční editaci, u které máme mnohem specializovanější
+nástroje. Všechny tyto takzvané „štětce” mají velmi dobré popisky a
+náčrtky. V první záložce vlastností se Vám také zobrazuje nádherný
+piktogram a můžete zde nastavovat všechny možnosti daného štětce - jako
+sílu a velikost. Tato ikona vpravo nahoře znázorňuje menu symetrie. V
+základu je nastavena na symetrii v ose X.
+</p>
+
+<p>
+Problémem je, že Sculpting často vytváří nečisté a moc složité meshe.
+Meshe vzniklé ze Sculptu se často předělávají, buďto tím, že se Scult
+Mesh bere jako předloha pro ručně vyrobený Mesh, nebo různými postupy,
+známé pod názvem Retopologizing, neboli Retopology. Toto je potřeba
+v branži dělat tak často, že na to vzniklo množství Add-onů, bezplatných
+i placených.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb5ca876" class="outline-3">
+<h3 id="orgb5ca876"><span class="section-number-3">3.2</span> Vzhled</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+         <b>*</b> Render Engine
+            Výběr Render Enginu je velmi důležitý a silně závisí na druhu grafiky
+a její využití pro daný projekt. Render Engine je sada. Nyní rozeberme
+zabudované a pár stažitelných enginů, jejich výhody, nevýhody a využití.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orga34f0d2"></a>EEVEE<br />
+<div class="outline-text-5" id="text-3-2-0-1">
+<p>
+               V nové verzi Blenderu spolu s předchozími najdete také zbrusu nový EEVEE
+Engine - dříve pouze stažitelný doplněk. Roku 2019, v nové verzi 2.8, se
+stal hlavním enginem, na který je nastaven každý nově stažený Blender.
+První snadno poznatelný rozdíl - oproti předešlému standartu, je jeho
+násobná rychlost a ještě více nových možností a nastavení.
+</p>
+</div>
+</li>
+
+<li><a id="org3f3c5b3"></a>Cycles Render<br />
+<div class="outline-text-5" id="text-3-2-0-2">
+<p>
+               Starší engine, který byl velmi dlouho používaný pro jeho jednoduchost
+a versatilitu. Kdokoli, kdo s ním pracoval, zná jeho hlavní nevýhodu,
+kterou je extrémně nízká rychlost. Před EEVEE se téměř nepoužíval jiný.
+</p>
+</div>
+</li>
+</ol>
+
+<div id="outline-container-org11880bb" class="outline-4">
+<h4 id="org11880bb"><span class="section-number-4">3.2.1</span> Složení objektu</h4>
+<div class="outline-text-4" id="text-3-2-1">
+<p>
+            Zde se podíváme na to, co dává naší změti polygonů všechny vzhledové
+vlastnosti, kterými jsou například barva, lesk, průhlednost atd.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orge22e470"></a>Mapy a UV Unwrap<br />
+<div class="outline-text-5" id="text-3-2-1-1">
+<p>
+               Je více způsobů, jak dát objektu materiální vzhled. Prvním jsou tzv.
+Mapy. Fungují na jednoduchém principu - jako byste rozkládali papír.
+Každá mapa je prostý obrázek, jehož barva v každém pixelu spolu s tzv.
+UV unwrappem, dává počítači informaci o vzhledu daného objektu. Jako
+papírové tapety, které se snažíte dostat na kouli nebo sloup. UV Unwrap
+jsou instrukce, kde a jak střihnout, abyste tu placku dostali na 3D
+objekt.
+</p>
+
+<p>
+Zde je možné upravovat, jak se aplikuje textura a vizualizovat objekty
+na 2D ploše.
+</p>
+
+<p>
+Pokud máte v [3D Viewport] zvolený objekt v edit módu, promítne jeho
+rozložení sem. Nahoře si zvolíte obrázek, který se vám za rozložení
+promítne. Pokud ne, tak můžete jít dít do UV &gt; Smart UV Unwrap a
+rozložení se udělá za Vás. Toto rozložení lze volně editovat a změny se
+Vám budou promítat rovnou do scény.
+</p>
+
+<p>
+Pokud chcete, aby se Vám nějaká část zafixovala a zůstala na stejném
+místě při automatickém rozložení, zvolte ji a stiskněte [P].
+</p>
+</div>
+</li>
+
+<li><a id="org145037e"></a>Textury<br />
+<div class="outline-text-5" id="text-3-2-1-2">
+<p>
+Textura je to, co dává objektu jeho barvu.
+</p>
+
+
+<div id="org234630f" class="figure">
+<p><img src="assets/03-objects/IcoSphere-Texture.jpg" alt="IcoSphere-Texture.jpg" />
+</p>
+<p><span class="figure-number">Figure 17: </span>IcoSphere-Texture</p>
+</div>
+
+<p>
+Aplikují se v Shader Editoru především pomocí Nody Image Texture. To Vám
+vesměs stačí, ale pokud ji chcete ještě škálovat nebo s ní pohybovat,
+tak se před ní dává ještě Noda Mapping. V té mohu rotovat, škálovat a
+transformovat texturu dle libosti. Tato nastavení jsou dokonce rovněž
+animovatelná. Texture Coordinate je Noda, která za výstup dává současnou
+pozici něčeho na scéně. Generated výstup se často používá, protože
+Mapping je nejlepší způsob jak upravit pozici textury. V základu má ale
+všude nuly, což není ideál, protože tím plně rozhodí pozici textury,
+takže pokud do Vector napojím Generated z Texture Coordinate, tak
+Mapping bude vědět kam ji dát a změny se budou počítat proti její
+původní pozici, ne vůči nule.
+</p>
+
+<p>
+Normál i dislokační mapa se používá stejně jako textura. Tedy stejné
+zapojení, ale akorát nahradím soubor otevřen v Nodě Textury. Vždy tu
+máme žlutý vývod, který nejčastěji bude veden do Base Color u Shaderu
+nebo Alpha, která se nejčastěji používá na Dislokaci a Color Ramp.
+</p>
+
+<p>
+Informace o tom, jak je textura nebo cokoli jiného z Image Nody
+aplikována, se nachází v UV Unwrap. Blender má zabudovaných několik
+textur jako specifické Nody.
+</p>
+</div>
+</li>
+
+<li><a id="org505e722"></a>Normály<br />
+<div class="outline-text-5" id="text-3-2-1-3">
+<p>
+<img src="assets/03-objects/normal.jpg" alt="normal.jpg" />
+<img src="assets/03-objects/normal-1.jpg" alt="normal-1.jpg" />
+<img src="assets/03-objects/normal-2.jpg" alt="normal-2.jpg" />
+</p>
+
+<ol class="org-ol">
+<li>Demonstrace Normály 18. Normál Mapa (Herzog, 2013)</li>
+</ol>
+
+<p>
+Velmi často je zkrátka příliš složité nebo spíše výpočetně náročné
+vytvářet malé detaily pomocí modelování. Zde přichází na řadu normál
+mapa. Ta jednoduše říká programu, jak se má chovat světlo po nárazu na
+povrch objektu podle následující tabulky:
+</p>
+
+<p>
+X: -1 až +1: Červená: 0 až 255
+</p>
+
+<p>
+Y: -1 až +1: zelená: 0 až 255
+</p>
+
+<p>
+Z: 0 až -1: Modrá: 128 až 255
+</p>
+
+<p>
+Každý pixel v mapě obsahuje RGB data, o která se poté změní směr odrazu
+světla od očekávaných hodnot. Tedy odraz je pouze změněn oproti hodnotám
+již spočítaných programem. Tato změna trajektorie světla utvoří na
+objektu iluzi prostoru, hloubky a detailů za využití nepatrné výpočetní
+síly reagující i při změně světla a pohledu. Z tohoto důvodu se velmi
+často využívají ve hrách a jiných místech, kde je zapotřebí načítat
+a zobrazovat objekty velmi rychle. Jediný háček je samozřejmě fakt, že
+normál je pouze iluze, která se velmi rychle ztratí, především pokud je
+objekt prohlížen zblízka, pod velkým úhlem nebo pod špatným světlem.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org2cddda3"></a>Dislokace<br />
+<div class="outline-text-6" id="text-3-2-1-3-1">
+<p>
+                  Ve své podstatě dislokační mapa nese podobný výsledek jako normál mapa,
+ale dosahuje toho výrazně výpočetně náročnějším způsobem. Výhodou je, že
+efekt dislokace je „skutečný” a nikdy nedojde k jeho ztrátě pod vysokými
+úhly - jako u normál map. Mapa je černobílé vyjádření hloubky. Čím
+<b><i>světlejší</i></b> je pixel, tím vystouplejší bude bod na modelu.
+</p>
+</div>
+</li>
+</ol>
+</li>
+
+<li><a id="orgfe7c5d5"></a>Materiály<br />
+<div class="outline-text-5" id="text-3-2-1-4">
+<p>
+               Pokud kreslení textur, map a normál není úplně pro Vás, můžete si práci
+ulehčit tím, že za Vás necháte vše dělat počítač. Materiál je soubor
+informací o tom, jak má vypadat povrch objektu. Vy pouze zadáte
+informace a zbytek za Vás může dopočítat a dotvořit, dynamicky
+a přizpůsobivě Blender. Blender je na materiálech tak založený, že i k
+aplikaci textury je třeba se s nimi setkat. Materiály fungují na tzv.
+Node systému.
+</p>
+
+<p>
+<a href=""></a>
+</p>
+
+<ol class="org-ol">
+<li>Demonstrace Shader Editoru</li>
+</ol>
+
+<p>
+Pro představu je Node v podstatě pracovník, co má jednu práci. Nějaká
+informace mu přijde, on s ní udělá X a pošle ji dál. V předešlém obrázku
+vidíme vlevo 3 čtverce - to jsou Nody a vpravo, co nám utváří. První
+Noda je Textura Vln (velmi jednoduchý matematicky daný vzor). V Blenderu
+je již jako samostatná Noda. Následuje Noda Difuzního Shaderu. Shaderové
+Nody jsou poslední a vlastně nejdůležitější část celku. Udává obecnou
+interakci světla s objektem. BSDF je zkratka pro matematickou funkci
+výpočtu dráhy světla. Pro naše účely to pouze znamená, že daná Noda je
+Shader - tedy převádí různé informace o lesklosti, barvě, průhlednosti,
+atd. na výstup. Příkladem Shaderu je skleněný, plně transparentní,
+lesklý, nelesklý a mnohé další. S EEVEE se nejčastěji používá tzv.
+„Principled BSDF”, který většinu potřebných vlastností sjednotil do
+jednoho Shaderu s vysokým množstvím nastavení. V závěru se nachází
+Materiální Výstup. Poté, co provedete všechny potřebné operace, napojíte
+sem výstupy a ty jsou poté zobrazeny na Vašem objektu.
+</p>
+
+<p>
+Možná jste si všimli různých zabarvení vstupů a výstupů. Ty mají
+důležitý význam pro zapojitelnost. Překvapivě Blender je schopen brát
+barvy jako vektor a provádět matematické operace na texturách. Je ale
+důležité vědět, co přesně máte za výstup, abyste s ním mohli dobře
+pracovat.
+</p>
+
+<p>
+Tabulka Barev (gandalf3, 2015):
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Barva</th>
+<th scope="col" class="org-left">Typ</th>
+<th scope="col" class="org-left">Zapojitelnost (Případně úprava dat provedena při daném zapojení)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Šedá</td>
+<td class="org-left">Číslo</td>
+<td class="org-left">Fialová a Žlutá (všechny tři hodnoty jsou tím samým číslem)</td>
+</tr>
+
+<tr>
+<td class="org-left">Žlutá</td>
+<td class="org-left">RGB</td>
+<td class="org-left">Fialová, Šedá (konvertuje na BW)</td>
+</tr>
+
+<tr>
+<td class="org-left">Fialová</td>
+<td class="org-left">3D Vektor</td>
+<td class="org-left">Žlutá, Šedá (konvertuje na BW)</td>
+</tr>
+
+<tr>
+<td class="org-left">Zelená</td>
+<td class="org-left">Shader</td>
+<td class="org-left">Pouze zelená</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+Možná Vás překvapilo napojení celé textury pouze pomocí jednoho RGB
+výstupu. Nesmíte nikdy zapomenout na dosti abstraktní koncept, že každá
+informace v Shaderu platí vždy pro daný bod na objektu. Takže většinou
+vedu pouze jedno číslo, i když mám 3D objekt s obrovským množstvím bodů,
+na každý z nich se vztahuje právě ta jedna daná informace, kterou vedu.
+</p>
+
+<p>
+<b>Volume</b> &#x2013; Materiál nemá pouze povrch ale také obsah. Ten funguje úplně
+identicky k Povrchu. V materiálním výstupu je druhou položkou právě
+Volume. Do něj se zapojují Volume Shadery.
+</p>
+
+<p>
+<b>Subsurface Scattering --</b> Název pro světlo odrážející se uvnitř
+objektu. Nejčastěji se ukazuje pomocí svíček, kdy oheň z nich mírně
+prosvěcuje skrze vosk a září i na části, které by měly být plně
+odstíněné. Slabý Subsurface Scattering se používá i pokud chcete udělat
+rozumně vypadající materiál pleti.
+</p>
+
+<p>
+Když přidáte nový materiál tlačítkem + napravo od seznamu Materiálů,
+můžete buď vytvořit Nový nebo kliknout nalevo od tlačítka New na ikonu
+materiálu, kde si můžete vybrat kterýkoli existující. Materiál takto
+přebraný je stejný u všech objektů, které jej využívají. Tedy pokud
+změním u jednoho nastavení Nody, v ostatních to bude stejné. Tam, kde
+bylo původně tlačítko New, je nyní název materiálu. Napravo od názvu
+jsou tři tlačítka. První zaručí uložení Materiálu i přesto, že jej
+nevyužívá žádný objekt. Druhé udělá novou kopii materiálu, takže pokud
+jste měli dříve jeden materiál ve dvou objektech a jeden z nich
+potřebujete změnit nezávisle na druhém. Třetí odstraní Materiál.
+</p>
+
+<p>
+Když máte více materiálů v jednom objektu, můžete definovat, které stěny
+používají který. Pokud chcete přiřadit stěně Materiál, jděte do Edit
+módu a se zvolenými stěnami stiskněte tlačítko Assign.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgdfdfd4c" class="outline-3">
+<h3 id="orgdfdfd4c"><span class="section-number-3">3.3</span> Pohyb</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+         <b>*</b> Key-framing
+            Key-Framing se skládá ze dvou slov. Key tedy klíč a frame tedy snímek.
+Tzv. klíčové snímky se používají v celé animaci pro udání všeho, co si
+můžete představit. Snímek v Blenderu je jedna animační časová jednotka
+a do každé z těchto jednotek můžete zapsat nějaké dané úkony, „klíče”.
+Tyto úkony jsou Blenderem brány jako osnova co v té chvíli má provést. V
+základu se používá 24 snímků za vteřinu, ale můžete si nastavit kolik je
+potřeba. Je však nutné upozornit, že zvýšením množství snímků za vteřinu
+se zrychlí vaše animace. Rychlost animace je totiž vázána na snímky a ne
+na čas. Do snímku lze zapsat libovolný počet klíčů - tak se nazývá
+informace o výši hodnoty v daném čase. Tato informace může být
+jakákoliv - od pozice objektu, až po jeho naklonění, aktivní kamery,
+dokonce i pózy postav a síly světel. V podstatě vše, co Vás napadne se
+dá keyframovat. V časové lince se keyframe vyznačuje jako žlutý bod.
+Vidět jsou pouze [Keyframe] zvolených objektů. Přidávají se buďto
+stisknutím pravého tlačítka myši na danou hodnotu nebo klávesou [I]
+v Objektovém módu okna 3D zobrazení. Ta Vám otevře menu, ve kterém máte
+na výběr veškeré Keyframeovatelné hodnoty zvolených objektů.
+</p>
+
+<p>
+Napravo Start a End udává, v jakém úseku bude probíhat animace. Toto se
+vztahuje pouze na Render a zobrazení. Pokud necháte spočítat nějakou
+simulaci, má vlastní nastavení časových úseků.
+</p>
+</div>
+
+<div id="outline-container-orgae8397c" class="outline-4">
+<h4 id="orgae8397c"><span class="section-number-4">3.3.1</span> Kosti &#x2013; Rigging</h4>
+<div class="outline-text-4" id="text-3-3-1">
+<p>
+            Animovat zvlášť každý polygon by bylo peklo a právě k tomu slouží Rig.
+Skládá se z článků zvaných kosti. Každý polygon má nyní přidělené kosti
+a místo animování stovek polygonů můžeme říct pouze: „Pohni kyčlí.” nebo
+v pokročilejších programech i: „Zvedni ruku.” či dokonce „Poskoč
+a zamávej.”. V herních enginech se používají většinou knihovny pohybů,
+které se aplikují na standardizovanou kostru u které je možné vyměňovat
+Mesh, takže jedna animace je možná použít pro více postav.
+</p>
+
+<p>
+<b>Armature</b> &#x2013; neboli kostra, je objekt, který slouží k udání ohybu a
+pohybu jiného objektu. Po vytvoření Armatury zvolte objekt, který chcete
+Armaturou ovládat a přidejte mu modifikátor Armatura s tím, že nastavíte
+jako zdroj armaturu. Armatura má svůj vlastní mód vedle editačního a
+objektového, a tím je mód pózový. V něm nastavíte pózu, kterou v daném
+snímku chcete a uložíte celou pózu jako Keyframe tlačítkem „Whole
+character”. Objekt, který má tento modifikátor, se poté následně bude
+deformovat tak, aby co nejblíže odrážel pohyb kostry. Další části kostry
+neboli tzv. kosti lze přidávat extrudováním [E]. Kosti lze upravovat jak
+celé, tak za konce. Počítají se jako vertexy a strany a přepíná se mezi
+nimi stejným způsobem.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org2e3c324" class="outline-4">
+<h4 id="org2e3c324"><span class="section-number-4">3.3.2</span> Fyzikální simulace</h4>
+<div class="outline-text-4" id="text-3-3-2">
+<p>
+            Překvapivou a velmi užitečnou schopností jsou simulace. Blender má velmi
+výkonné fyzikální simulace, přestože jsou samozřejmě zaměřeny na
+grafickou stránku a nemají sloužit jako přesné modely. Ale oheň, kouř,
+vlasy, látky i kapaliny, to vše se dá simulovat.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="orgf8e929e"></a>Rigid Bodies<br />
+<div class="outline-text-5" id="text-3-3-2-1">
+<p>
+               Rigid Body je v 3D grafickém žargonu standartní pevný předmět. Nastavení
+Dynamic určuje, zda se tento objekt pohybuje při Vaší animaci. Takže se
+vypíná například u podlahy a stěn. Pokud je Animated vypnutý, objekt
+ignoruje všechny své [keyframe]. Výpočet kolize dvou předmětů však není
+úplně jednoduchá záležitost, a tak pod Collisions &gt; Shape můžeme zvolit
+jakým způsobem se dá tento problém zjednodušit. V základu je toto
+nastaveno na Konvexní Mesh, takže pokud Vám nevychází simulace, zkuste
+toto změnit na Mesh.
+</p>
+</div>
+</li>
+
+<li><a id="orgdaf0e8f"></a>Kapalina<br />
+<div class="outline-text-5" id="text-3-3-2-2">
+<p>
+Typů objektů účastnících se simulací kapalin je několik:
+</p>
+
+<p>
+<b>Doména</b> &#x2013; V objemu tohoto objektu se odehrává celá simulace. Jeho
+shell slouží jako hranice, za kterou kapalina nemůže jít. Materiál
+tohoto objektu je materiál, který bude použit pro kapalinu. Resolution
+mění kvalitu kapaliny. <b>Pozor</b> - Čas začátku a konce simulace je ve
+<i>vteřinách</i>.
+</p>
+
+<p>
+V neposlední řadě je třeba stisknout tlačítko <b>Bake</b>. To řekne Blanderu,
+aby s tímto nastavením spočítal Vaši simulaci. Pokud dojde k nějaké
+změně, musíte nechat simulaci opět přepočítat.
+</p>
+
+<p>
+<b>Kapalina</b> &#x2013; Tento objekt slouží jako počáteční objem kapaliny.
+</p>
+
+<p>
+<b>Překážka</b> &#x2013; Vyznačuje, že s tímto objektem interaguje kapalina jako se
+solidní překážkou.
+</p>
+
+<p>
+<b>Inflow a Outflow</b> &#x2013; Tudy kapalina vtéká a vytéká.
+</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org435db64" class="outline-2">
+<h2 id="org435db64"><span class="section-number-2">4</span> Scéna</h2>
+<div class="outline-text-2" id="text-4">
+</div>
+<div id="outline-container-orgae2f933" class="outline-3">
+<h3 id="orgae2f933"><span class="section-number-3">4.1</span> Světlo</h3>
+<div class="outline-text-3" id="text-4-1">
+<p>
+         Na počítači se bez něj obejít můžeme, ale Blender a většina jiných
+grafických programů, s ním v základu pracuje. Za účelem realizmu
+používáme tzv. RayTracing. Toto znamená, že počítač simuluje reálné
+chování světla zjednodušeným modelem. Spočítá čáry od každého zdroje
+světla a sleduje, kam dopadnou a jak se odrazí. Podle toho zjišťuje
+a nastavuje světlost daných bodů na povrchu. Pokud používáme RayTracing,
+každý povrch obsahuje nějakou informaci o tom, kolik světla pohltí
+(vlastní světlost), kolik ho odrazí (lesklost), atd. O tom v kapitolách
+objekty, nyní si spíše probereme trochu názvosloví.
+</p>
+</div>
+
+<div id="outline-container-org9f4b697" class="outline-4">
+<h4 id="org9f4b697"><span class="section-number-4">4.1.1</span> Typy světel</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<p>
+<b>Point (Bod) --</b> Vesměs žárovka
+</p>
+
+<p>
+<b>Sun (Slunce)</b> &#x2013; Nyní trocha abstrakce. Slunce, aby mělo správný druh
+světla, musí ležet velmi vzdáleně. Slunce v Blenderu se počítá jako
+nekonečně daleký a nekonečně velký zdroj světla. Takže paprsky dopadají
+na scénu rovnoběžně, jdoucí po směru polopřímky zaznačené u objektu
+Slunce. Můžete si to představit jako obrovské stadionové světlo.
+</p>
+
+<p>
+<b>Spot --</b> V podstatě se jedná o baterku. Je to kužel světla. Pod
+nastavením Spot Shape můžete nastavit Size, což mění šířku paprsku a
+Blend, určující rychlost tlumení světla na okrajích - tedy jakési jeho
+rozptýlení.
+</p>
+
+<p>
+<b>Area (Plocha) --</b> Slunce akorát malé a usměrněné. Vydává rovnoběžné
+paprsky světla z plochy definované uživatelem.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1f83dd1" class="outline-4">
+<h4 id="org1f83dd1"><span class="section-number-4">4.1.2</span> Ambient Occlusion [AO]</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<p>
+            Velmi důležitá věc při pokusech o realistické rendery. Ambient occlusion
+je název pro odraz světla od každého objektu kolem nás. Při jeho absenci
+se světlo chová špatně a vypadá nereálně. Například pokud přiblížím ruku
+ke stěně, tak nejenom na ní vytvořím tmavší místa svým stínem, ale také
+se nějaká část světla odrazí od mé ruky a udělá opět jiná místa
+světlejšími nebo tmavšími. Tyto odražené paprsky se nazývají Ambient
+Occlusion.
+</p>
+
+<p>
+(PlayCanvas)
+</p>
+</div>
+</div>
+
+<div id="outline-container-org8b34c45" class="outline-4">
+<h4 id="org8b34c45"><span class="section-number-4">4.1.3</span> Fresnel</h4>
+<div class="outline-text-4" id="text-4-1-3">
+<p>
+            [Frenel] Tímto se myslí optická vlastnost, při které se od povrchů
+rovnoběžných s okem odráží do oka méně světla nežli od nakloněných.
+Nejlépe demonstrováno na takovéto kouli:
+</p>
+
+<p>
+Čím bělejší, tím více světla se odráží.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org93d58ff" class="outline-4">
+<h4 id="org93d58ff"><span class="section-number-4">4.1.4</span> IOR (Index Lomu)</h4>
+<div class="outline-text-4" id="text-4-1-4">
+<p>
+<a href=""></a>
+</p>
+
+<p>
+(Cddwumich, 2011)
+</p>
+
+<p>
+Každý průhledný předmět má tzv. Index Lomu. V Blenderu je užívána
+zkratka IOR (Index Of Refraction). Tato hodnota je definována jako poměr
+rychlosti světla ve vakuu k jeho rychlosti v daném materiálu. Co toto
+znamená, je, že světlo je zakřiveno ve chvíli, kdy přechází mezi
+hranicemi materiálů. Sílu a směr tohoto zakřivení definujete tedy jedním
+číslem. Pro představu můžete otevřít jakékoli fyzikální tabulky a najít
+si hodnoty pro všemožné materiály. Standartní sklo má většinou IOR okolo
+1.45.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc2311f9" class="outline-3">
+<h3 id="orgc2311f9"><span class="section-number-3">4.2</span> Vykreslování (Rendering)</h3>
+<div class="outline-text-3" id="text-4-2">
+<p>
+         Dnešní výpočetní síla neumožňuje všechny vizuální efekty zobrazovat v
+reálnem čase. Tzv. Render bere vaši scénu a zpracuje tyto informace do
+obrazového výstupu, přehratelného na každém normálním zařízení. Vedle
+souboru 3D modelu je toto nejčastější výstup.
+</p>
+</div>
+
+<div id="outline-container-org56d1dee" class="outline-4">
+<h4 id="org56d1dee"><span class="section-number-4">4.2.1</span> Nastavení</h4>
+<div class="outline-text-4" id="text-4-2-1">
+<p>
+            Navrátíme se nyní ke kapitole Vlastnosti a popíšeme si, jaká nastavení
+jsou k této tématice relevantní.
+</p>
+</div>
+
+<ol class="org-ol">
+<li><a id="org6d9e962"></a>Bloom<br />
+<div class="outline-text-5" id="text-4-2-1-1">
+<p>
+20 - Světlo s Bloom 21 - Světlo bez Bloom
+</p>
+
+<p>
+Slouží k reprodukci efektu se stejným názvem nalézajícího se v kamerách.
+Jedná se o efekt, při kterém světlo o dostatečné intenzitě začne
+přetékat daleko za své obvyklé rámce. V našich očích přirovnatelný
+k oslnění. Avšak některé kamery se neumí přenastavit nebo snímají právě
+vnitřní scénu, a tak může tento efekt být i trvalý.
+</p>
+
+<p>
+Co se týče nastavení. Threshold udává, jak jasné světlo musí být, aby
+mohlo začít vyvolávat tento efekt. Radius a Intenzita udávají plochu
+a potentnost efektu. Clamp udává tvrdý strop nad který už tento efekt
+nebude zobrazován - ať už bude světlo jakkoliv silné, jeho Bloom bude
+snížen na jednu fixní hodnotu. Pokud je Clamp 0, tento limit je
+nekonečně vysoký.
+</p>
+</div>
+</li>
+
+<li><a id="orgaa12992"></a>Screen Space Reflections<br />
+<div class="outline-text-5" id="text-4-2-1-2">
+<p>
+               Blender 2.8 předělal kompletně způsob, kterým funguje lesk a
+průhlednost. Přidal masivní množství pokročilých možností, které
+umožňují tuto výpočetně velmi náročnou operaci zjednodušit až do úrovně
+Real-Time (Vteřina snímků se vykresluje rychleji než vteřinu).
+</p>
+
+<ol class="org-ol">
+<li>Lesk pomocí Gloss 23. Lesk pomocí Odrazové plochy</li>
+</ol>
+
+<p>
+Standartní způsob býval nastavit materiál na Lesklý, nastavit hrubost
+lesku, a to bylo vše. Druhou možností v dnešní době jsou odrazové
+objekty. Pod menu přidání objektu jsou uvedeny jako Light Probe.
+Reflection plane a reflection cubemap si jsou velmi podobné. Dělají
+vesměs to samé. Pouze plane to dělá v jednom směru a cubemap je kostka,
+která tyto efekty bere ze všech směrů. Takovouto odrazovou plochu
+umístíte mezi to, co chcete odrazit a Váš objekt. Toť vše. Blender se o
+zbytek postará.
+</p>
+</div>
+</li>
+
+<li><a id="org34a83b2"></a>Motion Blur<br />
+<div class="outline-text-5" id="text-4-2-1-3">
+<p>
+               Motion blur je opět efekt replikující chování našich očí. Způsobuje, že
+pohyb je rozmazaný. Protože vykreslovací systém Blenderu nemusí mít
+žádné informace o pohybu a s touto možností vypnutou skutečně vykreslí
+každý snímek jako dokonale ostrý statický obraz. Se zapnutou bude brát v
+potaz rychlost a pohyb objektů v obraze, a příslušně je bude rozmazávat.
+Což vypadá realističtěji a v dynamických scénách obecně i lépe. Vaše
+scéna začíná na snímku 1, takže pokud chcete, aby Váš první snímek již
+Motion Blur obsahoval, musíte jeho začátek nastavit na snímek 0.
+</p>
+
+<p>
+automatically generated
+<a href=""></a>
+</p>
+
+<p>
+(E01, 2008)
+</p>
+</div>
+</li>
+
+<li><a id="org9be05f4"></a>Volumetric<br />
+<div class="outline-text-5" id="text-4-2-1-4">
+<p>
+               Zapíná a vypíná vykreslování obsahových (anglicky. volume) shaderů. Při
+tvorbě materiálů máte tři výstupy, kdy druhý z nich je právě Volume.
+Toto nastavení je buďto vypíná nebo zapíná nebo nastavuje, jak daleko
+nebo blízko od kamery by mělo jejich vykreslování začít a skončit.
+</p>
+</div>
+</li>
+</ol>
+</div>
+
+<div id="outline-container-org6819d19" class="outline-4">
+<h4 id="org6819d19"><span class="section-number-4">4.2.2</span> CPU vs. GPU</h4>
+<div class="outline-text-4" id="text-4-2-2">
+<p>
+            GPU je na vykreslování obrazu doslova dělané. Pokud má Vaše grafická
+karta některý ze systémů, které Blender podporuje, bude ji moct velmi
+dobře využít. Klíčová slova, která hledáte, pokud chcete zjistit, jestli
+daná karta tyto systémy má, jsou CUDA a OpenCL. Samozřejmě je nejlepší
+najít tabulky a reference pro skutečnou jistotu. Pokud není možnost se k
+takové kartě dostat, není to problém. Vaše CPU zvládá vše, co umí karta,
+pouze mírně pomaleji. Tento rozdíl je v Blenderu 2.8 výrazně nižší.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3e572c6" class="outline-4">
+<h4 id="org3e572c6"><span class="section-number-4">4.2.3</span> Další možnost &#x2013; Renderfarmy</h4>
+<div class="outline-text-4" id="text-4-2-3">
+<p>
+            Renderfarma je koncept, kde někdo jiný renderuje Vaše obrazy za Vás. Je
+několik způsobů, jak takovouto externí pomoc získat. Samozřejmě si ji
+lze zaplatit. Ceny se mohou odvíjet například od množství snímků, hodin,
+nebo množství výpočtu. Druhou možností jsou komunitní renderfarmy.
+Fungují na stejném principu, pouze platíte částí své výpočetní síly,
+kterou zrovna nepoužíváte, namísto penězi. Na Vašem počítači necháte
+spuštěn software takové farmy, který v dobách, kdy Váš hardware není pod
+zátěží, stahuje projekty jiných lidí a malinké kousíčky zpracuje.
+Později, když potřebujete Vy vykreslovat, rozdistribuuje se Váš projekt
+na stovky takovýchto neaktivních počítačů. Je to vzájemné propůjčení
+nepotřebné síly. Velkým háčkem je, že některé cizí počítače budou mít
+rozdílný hardware od toho Vašeho. To může způsobit malé nebo zásadní
+rozdíly ve výsledném vzhledu. Především pokud si dostatečně nehlídáte
+nastavení.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb51e5e8" class="outline-4">
+<h4 id="orgb51e5e8"><span class="section-number-4">4.2.4</span> Perspektivy</h4>
+<div class="outline-text-4" id="text-4-2-4">
+<p>
+            Říká, zda mají objekty být větší čím jsou bližší. Pokud toto nastavíte
+na ortografické, dva stejně velké objekty budou stejně velké, ať jsou
+jakkoli daleko. Ztrácí se perspektiva a kamera je jakoby bez čočky,
+jenom zaznamenávající plátno. Pro lepší představu je přiložen obrázek.
+</p>
+
+<p>
+(Kuiper, 2008)
+</p>
+
+<p>
+Přepínat mezi těmito perspektivami můžete buďto v nastavení kamery nebo
+pro viewport klávesou [5].
+</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org90fc31a" class="outline-2">
+<h2 id="org90fc31a"><span class="section-number-2">5</span> Ostatní</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+<b>* Soubory
+   **</b> Typy souborů
+</p>
+
+<ol class="org-ol">
+<li>[.blend] &#x2013; proprietární typ užívaný pouze Blenderem. Pokud jej
+podporuje jiný software, vědomě podporuje Blender
+
+<ol class="org-ol">
+<li>Pokud máte pod File&gt;External Data&gt;Pack into .blend zaškrtnuto ano,
+externí soubory jako textury atd. jsou vloženy přímo do .blend
+souborů</li>
+</ol></li>
+
+<li>[.blend1] &#x2013; Záložní .blend soubor. Po stisknutí tlačítka uložit, se
+starý .blend soubor přepíše na .blend1 a změny se uloží do starého
+[.blend].</li>
+
+<li>[.obj] &#x2013; univerzální soubor obsahující pouze Meshe</li>
+
+<li>[.stl] &#x2013; univerzální soubor obsahující pouze textury/materiály,
+téměř vždy přichází v páru s .obj souborem</li>
+</ol>
+</div>
+
+<div id="outline-container-orga8afbd0" class="outline-4">
+<h4 id="orga8afbd0"><span class="section-number-4">5.0.1</span> Import a Export</h4>
+<div class="outline-text-4" id="text-5-0-1">
+<p>
+            K Exportu a Importu slouží menu File. Nacházíme zde čtyři možnosti Link,
+Append, Import a Export. Import a Export slouží pochopitelně při práci
+s jinými programy a umožňují například pracovat s výše zmíněným [.obj] a
+[.stl] soubory. Zajímavějšími jsou Append a Link, které pracují pouze a
+jenom s jinými [.blend] soubory. Append přidá jakýkoli objekt, materiál
+nebo kolekci z jiného souboru do současného. Append pouze přidá <b>kopii</b>
+dané věci, která je v novém souboru editovatelná a plně nezávislá na
+původním souboru. Link se chová podobně jako instance zmiňovaná u
+Kolekcí v kapitole Outline na str. 27. Link není upravitelný v novém
+souboru, ale reflektuje změny ze souboru původního.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgaf3d809" class="outline-4">
+<h4 id="orgaf3d809"><span class="section-number-4">5.0.2</span> Jak správně předat SOUBOR tak, aby ho Každý otevřel</h4>
+<div class="outline-text-4" id="text-5-0-2">
+<p>
+            Toto může být některým jasné, ale stále se potkávám s lidmi, kteří toto
+nedodržují, takže si to zopakujme.
+</p>
+
+<ol class="org-ol">
+<li>Zeptám se člověka, v jakém formátu bude/chce pracovat.</li>
+
+<li>Nejlépe pošlu formát, o který požádal nebo nějaký ze standardů, které
+otevře co nejvíce programů - např. [.obj] a [.stl]</li>
+
+<li>Je dobré přiložit i originální [.blend] soubor pro přidanou
+kompatibilitu. Toto také umožní dotyčnému vyexportovat projekt do
+čehokoli potřebuje</li>
+
+<li>Hlavně nezapomeňte přiložit důležité soubory ze kterých jsou brány
+informace. Blender umí zabudovat veškeré soubory textur, materiálů,
+animací atd. do svého [.blend] souboru, a dokonce je také exportuje
+a upravuje dle potřeby při exportu do jiných formátů, ale ty jsou
+většinou hůře nebo pracně upravitelné. Často je dobré zkrátka
+originální soubory také přiložit</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org9fc783b" class="outline-3">
+<h3 id="org9fc783b"><span class="section-number-3">5.1</span> Suzanne</h3>
+<div class="outline-text-3" id="text-5-1">
+<p>
+<a href=""></a>
+</p>
+
+<p>
+(Inductiveload, 2008)
+</p>
+
+<p>
+V komunitě běhá takový vtípek, tato opice je jedním ze symbolů Blenderu.
+Když bylo jasné, že NaN zkrachuje, vydali poslední update, ve kterém
+byla přidána tato opičí hlava. Od té doby je tak trochu maskotem,
+a hlavně se velmi často používá na rychlé testování světel, textur,
+animací atd. Dodnes vydržela a je obsažena i v nejnovějších verzích.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgccfa0ca" class="outline-2">
+<h2 id="orgccfa0ca"><span class="section-number-2">6</span> Ukázky / Cvičení</h2>
+<div class="outline-text-2" id="text-6">
+<p>
+Možná jste právě dočetly tuto práci a nevíte kde začít s nápadem, nevíte
+kde začít s Meshem, jediné co na toto pomůže jsou zkušenosti, ale pro
+rámcovou představu kde začít, následuje několik velmi jednoduchých
+ukázek Renderů. U kterých v rychlosti rozeberu, jak byly dělány, abyste
+si mohli vytvořit trochu představu o tom, jak začít, co z čeho dělat a
+za pomocí jakých nástrojů. Záměrně jsou vynechány specifické detaily se
+záměrem neukázat jednoduše opsatelný postup, na konci kterého vlastně
+nemáte ponětí, co jste udělali.
+</p>
+</div>
+
+<div id="outline-container-org8f843b9" class="outline-3">
+<h3 id="org8f843b9"><span class="section-number-3">6.1</span> Vaporwave</h3>
+<div class="outline-text-3" id="text-6-1">
+<ol class="org-ol">
+<li>zapněte bloom</li>
+<li>přidejte si plane s dvěma Materiály tmavým a Emission
+
+<ol class="org-ol">
+<li>dejte na něj několik Multiresolution Simple Subdivide s materiál
+Offset 1, vypnutý Replace Original a zvýšený Thickness</li>
+<li>přidejte na něj displace s Texturou hluku nejlépe s Texture
+Coordinate nastaveno na nový Plane Axis objekt</li>
+<li>přidejte dvakrát Modifier Array, jednou Relative offset podle osy
+X a poté Y</li>
+<li>Nyní můžete animovat Plane Axis a Displace se Vám bude v průběhu
+animace měnit</li>
+</ol></li>
+
+<li>silnice je udělaná pomocí jedné cesty do tvaru S
+
+<ol class="org-ol">
+<li>poté Plane s Modifikátory Solidify, Bevel a Curve s Object
+nastaveným na cestu (pokud vám Curve nefunguje, zkontrolujte si
+Deformation Axis a zkuste ji změnit)</li>
+<li>světla podél silnice jsou z malé Plane se stejným Solidify a Bevel
+Modifikátorem s Array Modifikátorem na zdvojení, aby světla byla
+na obou stranách. Druhý Array, který jich vytvoří takové množství,
+aby sahala po celé délce silnice. Nakonec přidáme Curve modifier
+stejný jako předtím</li>
+<li>dejte si pozor na pořadí Modifikátorů</li>
+</ol></li>
+
+<li>slunce, může být pouze koule s Emission Materiálem, ale abychom
+dosáhli té pruhovanosti ve stylu Vaporwave, je třeba něčeho trochu
+složitějšího.
+
+<ol class="org-ol">
+<li>Texture Coordinate vezme souřadnice bodu na Slunci a Separate XYZ
+vyseparuje svislou osu Z. Poté provedeme Modulo operaci, což
+způsobí, že ve chvíli, kdy hodnota přesáhne nějakou hranici, je
+resetována zpět na nulu</li>
+<li>Takže máme číslo, které se pohybuje mezi 0 a 0.1 podle výšky. To
+můžeme napojit do ColorRamp, která převede tuto hodnotu na danou
+barvu</li>
+<li>Fresnel dává hodnotu dle úhlu pohledu. V tomto případě to znamená,
+že Slunce bude svítit na krajích více. Fresnel dává ale moc nízké
+hodnoty, a tak je vynásobíme konstantou, abyste ji mohli napojit
+přímo do síly záře</li>
+</ol></li>
+
+<li>Kruhy kolem slunce mají základ v Extrudované kružnici, která poté
+byla opakované Extrudována a Insetována
+
+<ol class="org-ol">
+<li>Poté jim byl přidán keyframe na všechny osy rotace a v grafovém
+editoru v pravém menu pod modifiers byla na každou osu přidána
+Built-In Function Sine s různými Amplitudami a Offsety, aby měly
+zdánlivě „náhodnou” rotaci po celou dobu animace</li>
+</ol></li>
+
+<li>Portál na konci silnice je velmi placatý válec s ozdobně Extrudovaným
+a Insetovaným pláštěm
+
+<ol class="org-ol">
+<li>Seshora a zespoda má Voronoi Texture nodu obarvenou s pomocí Color
+Rampy</li>
+<li>Poté má připojen Mapping na svůj Vector, aby mohla být v Mapping
+nodě animovaná Rotace, která způsobí pohyb naší textury</li>
+<li>Nezapomeňte u Mapping Nody použít Texture Coordinate nodu</li>
+</ol></li>
+
+<li>Auto má na sobě stejný Wireframe Modifier jako síť. Poté jsem udělal
+dvojitý loop cut, škáloval vertikálně dolů krajní stěny, a tím máme
+zevrubný tvar. Poté si jej můžete vyzdobit jak moc nebo jak málo se
+vám líbí
+
+<ol class="org-ol">
+<li>Na auto byl přidán Omezovač Follow Path, nastaven na cestu
+z kroku 3. Přidal jsem několik málo Keyframe na rotaci, aby byla
+hezčí v té zatáčce a skutečně tam byl pocit rychlosti</li>
+</ol></li>
+
+<li>Pokud chcete, můžete dále experimentovat a přidělat kameru například
+na auto. Zde se mi nejvíce osvědčil Limit Distance Modifier</li>
+<li>Můžete zkusit přidat jakousi mlhu s pomocí kostky, která svým obsahem
+zabírá celou scénu a má Volume Shader</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org808d7f4" class="outline-3">
+<h3 id="org808d7f4"><span class="section-number-3">6.2</span> Jednoduchá krajina z výšky</h3>
+<div class="outline-text-3" id="text-6-2">
+<ol class="org-ol">
+<li>přidejte Mesh &gt; Plane objekt</li>
+<li>přidejte Light &gt; Sun</li>
+<li>posuňte Slunce na pozici [2;2;2]
+
+<ol class="org-ol">
+<li>může mít zářivost okolo 20</li>
+</ol></li>
+
+<li>přidejte Ploše materiál</li>
+<li>přidejte Vlnovou Texturu [Wave Texture]
+
+<ol class="org-ol">
+<li>s nastavením [1;79.2;11.1;1]</li>
+</ol></li>
+
+<li>přidejte druhou Vlnovou Texturu
+
+<ol class="org-ol">
+<li>nastavení [47.2;78.3;16;7.4]</li>
+</ol></li>
+
+<li>spojte výstup Barvy do Matematické nody
+
+<ol class="org-ol">
+<li>nastavení, minimum</li>
+<li>tuto nodu napojte na Displacement</li>
+</ol></li>
+
+<li>přidejte druhý Principled BSDF
+
+<ol class="org-ol">
+<li>prudce zvyšte u obou Kovovost [Metallic]</li>
+</ol></li>
+
+<li>původní Principled nastavte do modra
+
+<ol class="org-ol">
+<li>a snižte mu Hrubost [Roughness] asi na 0.3</li>
+</ol></li>
+
+<li>druhý nastavte do zelena</li>
+<li>barvu Textury z kroku 5 napojte na hrubost druhého Shaderu</li>
+<li>přidejte Mix Shader Nodu, jejímž faktorem je barva z Textury z kroku
+5 a sčítá naše dva shadery</li>
+</ol>
+
+<p>
+A vznikne nám takováto pěkná texturka, mapka.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org4c3f290" class="outline-3">
+<h3 id="org4c3f290"><span class="section-number-3">6.3</span> Káva a Svačina</h3>
+<div class="outline-text-3" id="text-6-3">
+<blockquote>
+<p>
+Poznámky: Render Engine &#x2013; Cycles, Textury Přebrány z cc0Textures.com
+od (Demes, 2019)
+</p>
+</blockquote>
+
+<ol class="org-ol">
+<li>deska stolu je jednoduchá plane s materiálem z image nod z volně
+stažitelné textury o třech částech - tedy textura, normál mapa a
+dislokační mapa</li>
+<li>pro talíře je ideální Subsurface Modifiier přidán na velmi široký a
+nízký válec se zvednutými okraji, případně extrudovaný střed dolů</li>
+<li>šálek je další Subsurface Modifier s tím, že ucho je válec, jehož
+konce byly střídavě točeny a Extrudovány, dokud neměl správný tvar</li>
+<li>nejlepší výsledky u objektů, jenž mají být kapaliny uvnitř nádob,
+mám, když Shell objektu je mezi vnitřní a vnější stěnou nádoby</li>
+<li>pěna má aplikovaný tupý Proporční Editace &gt; Random nebo Displace pro
+ten jakýsi pěnovitý tvar. Poté je dobré opět proporční editací snížit
+střed s širokým rozsahem a se sníženým opět zvednout. To vytvoří
+takový ten tvarový artefakt jejího tvoření
+
+<ol class="org-ol">
+<li>posyp na pěně je jednoduchý Particle Systém, který odkazuje na
+objekt malé hnědé kuličky. Aplikován je na několik středových
+vertexů</li>
+</ol></li>
+
+<li>donut je klasický tórus, trocha Displace &gt; Noise pro nerovný povrch
+
+<ol class="org-ol">
+<li>s polevou je několik možností. Navrhuji zkopírovat vrchní polovinu
+vertexů donutu a aplikovat na ně Solidify a Bevel modifier
+s vysokou kvalitou</li>
+<li>posyp je další particle systém, tentokrát odkazující na skupinku
+různobarevných válců</li>
+</ol></li>
+
+<li>v neposlední řadě, nezapomeňme někam pěkně umístit slunce</li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-org0d35629" class="outline-3">
+<h3 id="org0d35629"><span class="section-number-3">6.4</span> Metro</h3>
+<div class="outline-text-3" id="text-6-4">
+<blockquote>
+<p>
+Poznámky: Render Engine &#x2013; Cycles, Textury Přebrány z cc0Textures.com
+od (Demes, 2019) a (Demes, 2018).
+</p>
+</blockquote>
+
+<ol class="org-ol">
+<li>zde jde nejvíce o aplikování textur</li>
+<li>schody jsou kvádrem s Array Modifier a jednoduchou texturou</li>
+<li>na nich leží jako dlažba pouze plane</li>
+<li>kovové zarážky jsou ze spláclého kvádru s Loop Cut na jedné straně a
+pak Extrudovanou jednou ze vzniklých stěn</li>
+<li>stěny jsou kostka, která měla dvě stěny odstraněny a poté byla
+zešikmena. Edge na jednom konci byly Extrudovány rovně, poté toto
+bylo pouze zopakováno
+
+<ol class="org-ol">
+<li>stěny jsou s Noise Mapou na Displace, aby měly ten zrnitý tvar a
+velká Voronoi texture spojena s Color Ramp, aby utvořily ty skvrny
+zbývající oranžové barvy</li>
+</ol></li>
+
+<li>zábradlí je ze tří skleněných válců spojeny pomocí Pipe Joints &gt; Pipe
+Elbow z Add-onu Add Mesh: Extra Objects a válcem ve stěně</li>
+<li>světla jsou válec s Emission shaderem, „drženy” z každé strany
+válcem, napojeny na větší válec, který má polovinu svých Edges pomocí
+Snapu dané na pozici stropu</li>
+<li>na konci chodby je opět ze stejného Add-onu, Extras &gt; Wall Factory</li>
+</ol>
+
+<blockquote>
+<p>
+Pomáhejte si tu s 3D kurzorem. Pokud Vám například nejde pořádně
+zarovnat k sobě zábradlí, jděte do Edit módu zvolte nějakou stěnu a
+dejte 3D kurzor to Selection a poté můžete zvolit svůj objekt a použít
+Selection to 3D kurzor. Tím se Vám dají na správné místo ve dvou osách
+a stačí je pouze posunout.
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org4047bae" class="outline-2">
+<h2 id="org4047bae"><span class="section-number-2">7</span> Tabulky</h2>
+<div class="outline-text-2" id="text-7">
+<p>
+** Zkratky (bez nich se neobejdete)
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Zkratka</th>
+<th scope="col" class="org-left">Použití</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">Shift + A</td>
+<td class="org-left">Přidat nový objekt nebo Nodu</td>
+</tr>
+
+<tr>
+<td class="org-left">Shift + D</td>
+<td class="org-left">Duplikovat zvolené</td>
+</tr>
+
+<tr>
+<td class="org-left">A</td>
+<td class="org-left">Zvolit vše / zvolit nic</td>
+</tr>
+
+<tr>
+<td class="org-left">TAB</td>
+<td class="org-left">Přepínání mezi módy Edit a Object</td>
+</tr>
+
+<tr>
+<td class="org-left">Ctrl + Shift + Alt + C</td>
+<td class="org-left">Menu Originu</td>
+</tr>
+
+<tr>
+<td class="org-left">Shift + S</td>
+<td class="org-left">Menu 3D kurzoru</td>
+</tr>
+
+<tr>
+<td class="org-left">T</td>
+<td class="org-left">Otevřít/Zavřít levé menu</td>
+</tr>
+
+<tr>
+<td class="org-left">N</td>
+<td class="org-left">Otevřít/Zavřít pravé menu</td>
+</tr>
+
+<tr>
+<td class="org-left">E</td>
+<td class="org-left">Extrude</td>
+</tr>
+
+<tr>
+<td class="org-left">I</td>
+<td class="org-left">Inset</td>
+</tr>
+
+<tr>
+<td class="org-left">S</td>
+<td class="org-left">Škálovat</td>
+</tr>
+
+<tr>
+<td class="org-left">R</td>
+<td class="org-left">Rotovat</td>
+</tr>
+
+<tr>
+<td class="org-left">T</td>
+<td class="org-left">Transformovat (Přemístit)</td>
+</tr>
+
+<tr>
+<td class="org-left">,</td>
+<td class="org-left">Zacentrovat pohled na zvolené</td>
+</tr>
+
+<tr>
+<td class="org-left">Ctrl + Alt + 0</td>
+<td class="org-left">Nastavit pohled kamery na současný pohled</td>
+</tr>
+
+<tr>
+<td class="org-left">Ctrl + Mezerník</td>
+<td class="org-left">Maximalizovat okno</td>
+</tr>
+
+<tr>
+<td class="org-left">Shift + R</td>
+<td class="org-left">Volba tažením</td>
+</tr>
+
+<tr>
+<td class="org-left">Ctrl + R</td>
+<td class="org-left">Loop Cut</td>
+</tr>
+
+<tr>
+<td class="org-left">Shift + \^</td>
+<td class="org-left">Přepnout 3D view do jakéhosi FPS módu navigace</td>
+</tr>
+
+<tr>
+<td class="org-left">Ctrl + L</td>
+<td class="org-left">Zvolit spojené Vertexe v Edit módu</td>
+</tr>
+
+<tr>
+<td class="org-left">0</td>
+<td class="org-left">Pohled kamerou</td>
+</tr>
+
+<tr>
+<td class="org-left">Číslice</td>
+<td class="org-left">Nastavení pohledu rotací</td>
+</tr>
+
+<tr>
+<td class="org-left">Ctrl + Číslice</td>
+<td class="org-left">Pohyb pohledu ze strany na stranu</td>
+</tr>
+
+<tr>
+<td class="org-left">Shift + Číslice</td>
+<td class="org-left">Náklon pohledu</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="outline-container-org8a51da9" class="outline-3">
+<h3 id="org8a51da9"><span class="section-number-3">7.1</span> Slovníček Pojmů</h3>
+<div class="outline-text-3" id="text-7-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Pojem</th>
+<th scope="col" class="org-left">Vysvětlení</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">RGB</td>
+<td class="org-left">Údaj o barvě uložený jako tři separátní čísla. Hodnota červené, zelené a modré</td>
+</tr>
+
+<tr>
+<td class="org-left">BW</td>
+<td class="org-left">Údaj o barvě. Jedno číslo obsahující informaci o světlosti, tedy uchovává pouze černobílou.</td>
+</tr>
+
+<tr>
+<td class="org-left">CUDA<sup>®</sup> (Nvidia)</td>
+<td class="org-left">Systém obsažen v Nvidia, grafických kartách. Umožňuje Blenderu direktně využívat danou grafickou kartu</td>
+</tr>
+
+<tr>
+<td class="org-left">Shell</td>
+<td class="org-left">Skořápka Meshe</td>
+</tr>
+
+<tr>
+<td class="org-left">Volume</td>
+<td class="org-left">Celý Mesh i s objemem</td>
+</tr>
+
+<tr>
+<td class="org-left">Mesh</td>
+<td class="org-left">Body a povrchy tvořící jeden objekt</td>
+</tr>
+
+<tr>
+<td class="org-left">Vertex</td>
+<td class="org-left">Jeden vrchol na Mesh</td>
+</tr>
+
+<tr>
+<td class="org-left">Edge</td>
+<td class="org-left">Spojnice dvou Vertexů</td>
+</tr>
+
+<tr>
+<td class="org-left">Face</td>
+<td class="org-left">Povrch mezi alespoň třemi Vertexy</td>
+</tr>
+
+<tr>
+<td class="org-left">Wireframe</td>
+<td class="org-left">Mesh bez Face, jenom Edge a Vertexy</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orga8dc163" class="outline-3">
+<h3 id="orga8dc163"><span class="section-number-3">7.2</span> Materiály</h3>
+<div class="outline-text-3" id="text-7-2">
+<p>
+         Tady je několik málo Materiálů a jak je nastavit. Je zde klasický
+povrchový materiál, jeden objemový materiál a složitěji matematický
+definovaný Texturový materiál. Abyste měli trochu lepší představu, jak
+se postupuje při vytváření takového materiálu.
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Název</th>
+<th scope="col" class="org-left">Nastavení</th>
+<th scope="col" class="org-left">Náhled</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">#+begin<sub>quote</sub></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+<p>
+<a href=""></a>
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<tbody>
+<tr>
+</tr>
+</tbody>
+
+<tr>
+<td class="org-left">Porcelán</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">#+end<sub>quote</sub></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">#+begin<sub>quote</sub></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Mlha</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">#+end<sub>quote</sub></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">#+begin<sub>quote</sub></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">Rozbitá stěna</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+
+<tr>
+<td class="org-left">#+end<sub>quote</sub></td>
+<td class="org-left">&#xa0;</td>
+<td class="org-left">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org23869db" class="outline-2">
+<h2 id="org23869db"><span class="section-number-2">8</span> Užitečné odkazy</h2>
+<div class="outline-text-2" id="text-8">
+<p>
+** Tutoriály
+   BlenderGuru.com
+</p>
+
+<p>
+CGCookie.com
+</p>
+
+<p>
+Youtube &#x2013; Ducky 3D
+</p>
+</div>
+
+<div id="outline-container-orgf41153c" class="outline-3">
+<h3 id="orgf41153c"><span class="section-number-3">8.1</span> Info</h3>
+<div class="outline-text-3" id="text-8-1">
+<p>
+Docs.blender.org
+</p>
+</div>
+</div>
+
+<div id="outline-container-orge6ce705" class="outline-3">
+<h3 id="orge6ce705"><span class="section-number-3">8.2</span> Zdroje</h3>
+<div class="outline-text-3" id="text-8-2">
+<p>
+Poliigon.com - textury
+</p>
+
+<p>
+Textures.com - textury
+</p>
+
+<p>
+Cc0textures.com - textury, s volnou licencí
+</p>
+
+<p>
+SketchFab.com - 3D modely, jasně evidované licence, obsahuje i volné
+licence
+</p>
+
+<p>
+CGTrader.com - 3D modely
+</p>
+
+<p>
+OpenGameArt.org - 3D modely, jasně evidované licence, obsahuje i volné
+licence
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org5805ca3" class="outline-2">
+<h2 id="org5805ca3"><span class="section-number-2">9</span> Závěr</h2>
+<div class="outline-text-2" id="text-9">
+<p>
+      Již když jsem tuto práci psal, dostal jsem dost žádostí od lidí, zda si
+ji mohou přečíst nebo alespoň poznámky ohledně toho, že Blender už
+neúspěšně zkoušeli. To mi často dodávalo chuť ji dodělat a pocit, že
+bude mít smysl. Myslím, že až se zvýší množství lidí, kteří si ji
+přečetlo, zvýší se šance, že se objeví kvalitní a produktivní zpětná
+vazba, která práci bude nápomocná k jejímu vylepšení nebo rozšíření.
+Pokud by se uchytila a začala žít vlastním životem, byl by to nejvyšší
+stupeň úspěchu. Pevně doufám, že dopomůže mnohým k tomu začít se
+pohybovat alespoň mírně v této oblasti.
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgb2fe7fa" class="outline-2">
+<h2 id="orgb2fe7fa"><span class="section-number-2">10</span> Bibliografie</h2>
+<div class="outline-text-2" id="text-10">
+<p>
+<b>Cddwumich. 2011.</b>
+Wikiskripta. <i><img src="Refractive_index_pic.png" alt="Refractive_index_pic.png" />.</i> [Online] 2. 4 2011.
+<img src="https://www.wikiskripta.eu/w/Index_lomu_sv%C4%9Btla#/media/File:Refractive_index_pic.png" alt="File:Refractive_index_pic.png" />.
+</p>
+
+
+<p>
+<b>Demes, Lennart. 2019.</b> Planks #17. <i>CC0 Textures.</i> [Online]
+StruffelProductions, 22. 8 2019.
+<a href="https://cc0textures.com/view?tex=Planks17">https://cc0textures.com/view?tex=Planks17</a>.
+</p>
+
+
+<p>
+<b>&#x2014;. 2018.</b> Tactile Paving
+#03. <i>CC0 Textures.</i> [Online] StruffelProductions, 6. 10 2018.
+<a href="https://cc0textures.com/view?tex=TactilePaving03">https://cc0textures.com/view?tex=TactilePaving03</a>.
+</p>
+
+
+<p>
+<b>&#x2014;. 2019.</b> Tiles #36.
+<i>CC0 Textures.</i> [Online] StruffelProductions, 9. 3 2019.
+<a href="https://cc0textures.com/view?tex=Tiles36">https://cc0textures.com/view?tex=Tiles36</a>.
+</p>
+
+
+<p>
+<b>E01. 2008.</b> <a href="London">London</a> bus
+and telephone box on Haymarket.jpg. <i>Wikipedia.</i> [Online] 8. 2 2008.
+<img src="https://commons.wikimedia.org/wiki/File:London_bus_and_telephone_box_on_Haymarket.jpg" alt="File:London_bus_and_telephone_box_on_Haymarket.jpg" />.
+</p>
+
+
+<p>
+<b>gandalf3. 2015.</b>
+What is the meaning of the color of the node sockets in the node editor?
+<i>StackExchange: Blender.</i> [Online] 2015.
+<a href="https://blender.stackexchange.com/questions/33915/what-is-the-meaning-of-the-color-of-the-node-sockets-in-the-node-editor">https://blender.stackexchange.com/questions/33915/what-is-the-meaning-of-the-color-of-the-node-sockets-in-the-node-editor</a>.
+</p>
+
+
+<p>
+<b>Herzog, Julian. 2013.</b> <a href="Normal">Normal</a> map example - Map.png. <i>Wikimedia: Commons.</i>
+[Online] 8. 4 2013.
+<img src="https://commons.wikimedia.org/wiki/File:Normal_map_example_-_Map.png" alt="File:Normal_map_example_-_Map.png" />.
+</p>
+
+
+<p>
+<b>Inductiveload. 2008.</b>
+Suzanne.svg. <i>Wikimedia.</i> [Online] 2008.
+<a href="https://commons.wikimedia.org/wiki/">https://commons.wikimedia.org/wiki/</a> File: Suzanne.svg
+</p>
+
+
+<p>
+<b>Kuiper, Pieter. 2008.</b>
+OrthoPerspective.svg. <i>Wikimedia.</i> [Online] 22. 11 2008.
+<a href="https://commons.wikimedia.org/wiki/">https://commons.wikimedia.org/wiki/</a> File: OrthoPerspective.svg
+</p>
+
+
+<p>
+<b>2020.</b>
+Microsoft Word. místo neznámé : Microsoft
+Corporation, 2020.
+</p>
+
+
+<p>
+<b>Nvidia.</b> About CUDA.
+<i>Nvidia Developer.</i> [Online]
+developer.nvidia.com/about-cuda.
+</p>
+
+
+<p>
+<b>PlayCanvas.</b> User Manual: Ambient
+Occlusion. <i>PlayCanvas.</i> [Online]
+<a href="https://developer.playcanvas.com/en/user-manual/graphics/lighting/ambient-occlusion/.*Rensselaer">https://developer.playcanvas.com/en/user-manual/graphics/lighting/ambient-occlusion/.*Rensselaer</a>. 1998.
+</p>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+
+<div class="footdef"><sup><a id="fn.1" class="footnum" href="#fnr.1">1</a></sup> <div class="footpara"><p class="footpara">
+<b>Karon, Pavla. 2017.</b> CGCookie. <i>Max Puliero: "I Use Blender Because It's
+Powerful, Not Because It's Free".</i> [Online] 19. 9 2017.
+<a href="https://cgcookie.com/articles/max-puliero">https://cgcookie.com/articles/max-puliero</a>.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.2" class="footnum" href="#fnr.2">2</a></sup> <div class="footpara"><p class="footpara">
+*Ubisoft News. <i>Ubisoft Joins Blender Development Fund to Support Open
+Source Animation.</i> [Online] 22. 6 2019.
+<a href="https://news.ubisoft.com/en-us/article/1Fse1XyXzj76UJ1gKFohbz/ubisoft-joins-blender-development-fund-to-support-open-source-animation">https://news.ubisoft.com/en-us/article/1Fse1XyXzj76UJ1gKFohbz/ubisoft-joins-blender-development-fund-to-support-open-source-animation</a>.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.3" class="footnum" href="#fnr.3">3</a></sup> <div class="footpara"><p class="footpara">
+<b>Netflix. 2018.</b> Netflix. <i>Next Gen.</i> [Online] 2018.
+<a href="https://www.netflix.com/cz-en/title/80988892">https://www.netflix.com/cz-en/title/80988892</a>.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.4" class="footnum" href="#fnr.4">4</a></sup> <div class="footpara"><p class="footpara">
+<b>Veldhuizen, Bart. 2018.</b> BlenderNation. <i>"Next Gen" - Blender Production by Tangent
+Animation soon on Netflix!</i> [Online] 20. Srpen 2018.
+<a href="https://www.blendernation.com/2018/08/20/next-gen-blender-production-by-tangent-animation-soon-on-netflix/">https://www.blendernation.com/2018/08/20/next-gen-blender-production-by-tangent-animation-soon-on-netflix/</a>.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.5" class="footnum" href="#fnr.5">5</a></sup> <div class="footpara"><p class="footpara">
+<b>Failes, Ian. 2016.</b> MovieMaker. <i>Building the World of Warcraft: An In-Depth
+Conversation With Visual Effects Supervisor Bill Westenhofer.</i>
+[Online] 22. 6 2016.
+<a href="https://www.moviemaker.com/creating-warcraft-interview-visual-effects-supervisor-bill-westenhofer/">https://www.moviemaker.com/creating-warcraft-interview-visual-effects-supervisor-bill-westenhofer/</a>.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.6" class="footnum" href="#fnr.6">6</a></sup> <div class="footpara"><p class="footpara">
+*Rensselaer. <i>BlenderManual.</i> [Online] 1998.
+<a href="http://www.rpi.edu/dept/acm/packages/blender/man/manual_1.02/man/manual02.1a.html.*Ubisoft">http://www.rpi.edu/dept/acm/packages/blender/man/manual_1.02/man/manual02.1a.html.*Ubisoft</a>. 2019.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.7" class="footnum" href="#fnr.7">7</a></sup> <div class="footpara"><p class="footpara">
+<b>Maanders, William. 2008.</b> <a href="Ton">Ton</a> Roosendaal on Big Buck Bunny premiere by
+William Maanders 2008.jpg. <i>Wikimedia.</i> [Online] 2008.
+<img src="https://commons.wikimedia.org/wiki/File:Ton_Roosendaal_on_Big_Buck_Bunny_premiere_by_William_Maanders_2008.jpg" alt="File:Ton_Roosendaal_on_Big_Buck_Bunny_premiere_by_William_Maanders_2008.jpg" />.
+</p></div></div>
+
+<div class="footdef"><sup><a id="fn.8" class="footnum" href="#fnr.8">8</a></sup> <div class="footpara"><p class="footpara">
+<b>Blender (software), Wikipedia. n. d..</b> Blender
+(software). <i>Wikipedia.</i> [Online] n. d..
+n. d. n. d. <a href="https://en.wikipedia.org/wiki/Blender_(software)">https://en.wikipedia.org/wiki/Blender_(software)</a>.
+</p></div></div>
+
+
+</div>
+</div></div>
+<div id="postamble" class="status">
+<p class="author">Author: Michal Žáček</p>
+<p class="date">Created: 2021-08-01 Sun 18:25</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
